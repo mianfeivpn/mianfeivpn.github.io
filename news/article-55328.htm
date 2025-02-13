@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://mianfeivpn.github.io/news/article-55328.htm" />
+    <title>feign post 参数对象不加@RequestBody的用法</title>
+        <meta name="description" content="最近在做小程序调支付服务接口的一个功能，这个feign接口传参真的太费事。 代码我就改造了下，不直接上真实代码。 比如小程序调支付服务的订单查询接口，支付服务那边的controller的订单查询方法是" />
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/website/img/androidclash/favicon.ico" type="image/x-icon"/>
+    
+    <meta name="author" content="免费VPN节点机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://mianfeivpn.github.io/news/article-55328.htm" />
+    <meta property="og:site_name" content="免费VPN节点机场订阅官网" />
+    <meta property="og:title" content="feign post 参数对象不加@RequestBody的用法" />
+    <meta property="og:image" content="https://mianfeivpn.github.io/uploads/20240305/c556d43ab0b27b90e0e71e9418e309bb.webp" />
+        <meta property="og:release_date" content="2025-02-12T09:08:05" />
+    <meta property="og:updated_time" content="2025-02-12T09:08:05" />
+        <meta property="og:description" content="最近在做小程序调支付服务接口的一个功能，这个feign接口传参真的太费事。 代码我就改造了下，不直接上真实代码。 比如小程序调支付服务的订单查询接口，支付服务那边的controller的订单查询方法是" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="feign post 参数对象不加@RequestBody的用法">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/animate.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/flaticon.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/style.css" rel="stylesheet" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DCKB1K87CW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DCKB1K87CW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+                        <a class="navbar-brand" href="/">免费VPN<span></span></a>
+            
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> MENU
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                	                    <li class="nav-item"><a href="/" class="nav-link"><span>首页</span></a></li>
+                                        <li class="nav-item"><a href="/free-nodes/" class="nav-link"><span>免费节点</span></a></li>
+                                        <li class="nav-item"><a href="/paid-subscribe/" class="nav-link"><span>推荐机场</span></a></li>
+                                        <li class="nav-item"><a href="/client.htm" class="nav-link"><span>客户端</span></a></li>
+                                        <li class="nav-item"><a href="/news/" class="nav-link"><span>新闻资讯</span></a></li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="hero-wrap" style="height:350px;overflow: hidden;">
+        <div class="overlay"></div>
+        <div class="container-fluid px-0">
+            <div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
+                <img class="one-third js-fullheight align-self-end order-md-last img-fluid" href="/assets/website/img/androidclash/undraw_book_lover_mkck.svg" alt="" style="opacity: 0.5;">
+                <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
+                    <div class="text" style="top: 30%;min-width: 70%;">
+                        <h1>feign post 参数对象不加@RequestBody的用法</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-about img ftco-section" id="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                	                <input type="hidden" id="share-website-info" data-name="V2ray X节点订阅官网" data-url="https://v2rayx.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>最近在做小程序调支付服务接口的一个功能，这个feign接口传参真的太费事。<br /> 代码我就改造了下，不直接上真实代码。<br /> 比如小程序调支付服务的订单查询接口，支付服务那边的controller的订单查询方法是：</p> <pre><code class="prism language-cpp">	@ResponseBody     @<span class="token function">RequestMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"/order/select"</span><span class="token punctuation">,</span> method <span class="token operator">=</span> RequestMethod<span class="token punctuation">.</span>POST<span class="token punctuation">)</span>     @<span class="token function">ApiOperation</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"订单查询"</span><span class="token punctuation">,</span> notes <span class="token operator">=</span> <span class="token string">"订单查询"</span><span class="token punctuation">)</span>     @<span class="token function">ApiImplicitParams</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>             @<span class="token function">ApiImplicitParam</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"queryNum"</span><span class="token punctuation">,</span> value <span class="token operator">=</span> <span class="token string">"查询流水"</span><span class="token punctuation">,</span> paramType <span class="token operator">=</span> <span class="token string">"form"</span><span class="token punctuation">,</span> required <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">,</span>             @<span class="token function">ApiImplicitParam</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"queryDate"</span><span class="token punctuation">,</span> value <span class="token operator">=</span> <span class="token string">"流水日期"</span><span class="token punctuation">,</span> paramType <span class="token operator">=</span> <span class="token string">"form"</span><span class="token punctuation">,</span> required <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span>     <span class="token punctuation">}</span><span class="token punctuation">)</span>     <span class="token keyword">public</span> Order <span class="token function">qryBarcodePay</span><span class="token punctuation">(</span>@ApiIgnore Order hero<span class="token punctuation">)</span> throws Exception <span class="token punctuation">{<!-- --></span>          xxxxx<span class="token punctuation">;</span>     <span class="token punctuation">}</span> </code></pre> <p>这个post接口，有点奇怪，多了很多没见过的注解，而一般情况，post接口里参数对象应该是这么写的：</p> <pre><code class="prism language-cpp"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">public</span> Order <span class="token function">qryBarcodePay</span><span class="token punctuation">(</span>@RequestBody Order hero<span class="token punctuation">)</span> throws Exception <span class="token punctuation">{<!-- --></span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span> </code></pre> <p>也就是传参的body前面一般会加上@RequestBody参数，但是支付服务的接口用到了@ApiImplicitParam和@ApiIgnore 注解，属于Swagger2的注解，有必要先学习下这两个注解的基本使用：</p> <blockquote> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/h-c-g/p/11004020.html"  rel="nofollow">@ApiImplicitParam的使用</a><br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/u010250240/article/details/103120635"  rel="nofollow">@ApiIgnore注解的使用</a></p> </blockquote> <p>但是呢，一开始没想太多，调支付服务的feign接口的方法就按着平常写的post接口来：</p> <pre><code class="prism language-cpp">@<span class="token function">FeignClient</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"pay"</span><span class="token punctuation">,</span> path<span class="token operator">=</span><span class="token string">"pay"</span><span class="token punctuation">)</span> <span class="token keyword">public</span> interface payFeignClient <span class="token punctuation">{<!-- --></span>      @ResponseBody     @<span class="token function">RequestMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"/payment/order/select"</span><span class="token punctuation">,</span> method <span class="token operator">=</span> RequestMethod<span class="token punctuation">.</span>POST<span class="token punctuation">)</span>     @<span class="token function">ApiOperation</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"订单查询"</span><span class="token punctuation">,</span> notes <span class="token operator">=</span> <span class="token string">"订单查询"</span><span class="token punctuation">)</span>     <span class="token keyword">public</span> Order <span class="token function">qryBarcodePay</span><span class="token punctuation">(</span>@RequestBody Order order<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> </code></pre> <p>然后在调式的时候，发现小程序调支付服务这个订单查询接口的时候，支付服务那边接受的参数对象Order字段里面的值都是null，原因是feign这边传的Order对象是RequestBody类型，而支付服务那边的接口接受参数时没有加@RequestBody，所以应该是反序列化的时候，由于格式不同，就没有成功，才出现了支付服务这边接受的参数对象Order字段里面的值都为null。</p> <p>解决办法：<br /> feign接口改成这样子就正常了：</p> <pre><code class="prism language-cpp">@<span class="token function">FeignClient</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"pay"</span><span class="token punctuation">,</span> path<span class="token operator">=</span><span class="token string">"pay"</span><span class="token punctuation">)</span> <span class="token keyword">public</span> interface payFeignClient <span class="token punctuation">{<!-- --></span>      @<span class="token function">RequestMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"/payment/qry/barcode/pay"</span><span class="token punctuation">,</span> method <span class="token operator">=</span> RequestMethod<span class="token punctuation">.</span>POST<span class="token punctuation">)</span>     @<span class="token function">ApiOperation</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"订单查询"</span><span class="token punctuation">,</span> notes <span class="token operator">=</span> <span class="token string">"订单查询"</span><span class="token punctuation">)</span>     @<span class="token function">Headers</span><span class="token punctuation">(</span>MediaType<span class="token punctuation">.</span>APPLICATION_FORM_URLENCODED_VALUE<span class="token punctuation">)</span>     <span class="token keyword">public</span> ResultInfo<span class="token operator">&lt;</span>QryBarcodePayModel<span class="token operator">&gt;</span> <span class="token function">qryBarcodePay</span><span class="token punctuation">(</span>             @<span class="token function">RequestParam</span><span class="token punctuation">(</span>required <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span> name <span class="token operator">=</span> <span class="token string">"qryNo"</span><span class="token punctuation">)</span> String qryNo<span class="token punctuation">,</span>             @<span class="token function">RequestParam</span><span class="token punctuation">(</span>required <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span> name <span class="token operator">=</span> <span class="token string">"hotelCode"</span><span class="token punctuation">)</span> String hotelCode<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> </code></pre> <p>这里对比一下feign和原接口的参数：<br /> 原接口：</p> <pre><code class="prism language-cpp">@<span class="token function">ApiImplicitParams</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>             @<span class="token function">ApiImplicitParam</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"queryNum"</span><span class="token punctuation">,</span> value <span class="token operator">=</span> <span class="token string">"查询流水"</span><span class="token punctuation">,</span> paramType <span class="token operator">=</span> <span class="token string">"form"</span><span class="token punctuation">,</span> required <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">,</span>             @<span class="token function">ApiImplicitParam</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"queryDate"</span><span class="token punctuation">,</span> value <span class="token operator">=</span> <span class="token string">"流水日期"</span><span class="token punctuation">,</span> paramType <span class="token operator">=</span> <span class="token string">"form"</span><span class="token punctuation">,</span> required <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span>     <span class="token punctuation">}</span><span class="token punctuation">)</span>     <span class="token keyword">public</span> Order <span class="token function">qryBarcodePay</span><span class="token punctuation">(</span>@ApiIgnore Order hero<span class="token punctuation">)</span> </code></pre> <p>feign接口：</p> <pre><code class="prism language-cpp">@<span class="token function">Headers</span><span class="token punctuation">(</span>MediaType<span class="token punctuation">.</span>APPLICATION_FORM_URLENCODED_VALUE<span class="token punctuation">)</span>     <span class="token keyword">public</span> ResultInfo<span class="token operator">&lt;</span>QryBarcodePayModel<span class="token operator">&gt;</span> <span class="token function">qryBarcodePay</span><span class="token punctuation">(</span>             @<span class="token function">RequestParam</span><span class="token punctuation">(</span>required <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span> name <span class="token operator">=</span> <span class="token string">"qryNo"</span><span class="token punctuation">)</span> String qryNo<span class="token punctuation">,</span>             @<span class="token function">RequestParam</span><span class="token punctuation">(</span>required <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span> name <span class="token operator">=</span> <span class="token string">"hotelCode"</span><span class="token punctuation">)</span> String hotelCode<span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre> <p>可以看出来差别很大，首先传参，原接口是post请求，传的是一个对象，但是对象前加了@ApiIgnore 注解，相信前面给的链接学习后知道这个注解表示的是忽略的意思，也就是传参的时候，忽略掉这个对象，所以feign传的参压根就没有对象。<br /> 其次原接口对两个参数加了@ApiImplicitParam，需要提前说明的是，加了@ApiImplicitParam的两个参数queryNum、queryDate都属于Order 类里的属性。<br /> 重点看@ApiImplicitParam的paramType = “form”, required = true这两个地方，paramType="form"就表示传参以form表单的形式，所以feign接口方法上面加了@Headers(MediaType.APPLICATION_FORM_URLENCODED_VALUE)。<br /> 其次require=true就表示这两个参数是必传的。<br /> 以上就确定了feign的接口方法应该如何写，最后参数到原接口过来时，会自动将queryNum、queryDate两个参数set到Order对象里去，至于为何，我也不太清楚，暂时知道是可以这么用的。</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-54781.htm">猫咪的三针疫苗（猫咪的3针疫苗）</a></p>
+                                        <p>下一个：<a href="/news/article-55329.htm">中国兽药厂排行榜前十（中国兽药厂家五十强企业名单）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                	<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-2-10-free-node-subscribe.htm" title="2月10日免费VPN订阅 | 2025年20.1M/S|Clash/SSR/Shadowrocket/V2ray免费节点链接地址">2月10日免费VPN订阅 | 2025年20.1M/S|Clash/SSR/Shadowrocket/V2ray免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-53152.htm" title="宠物领养在哪里发布（宠物领养去哪里领养）">宠物领养在哪里发布（宠物领养去哪里领养）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-3-free-v2ray.htm" title="2月3日免费VPN订阅 | 18.7M/S|2025年SSR/V2ray/Clash/Shadowrocket免费节点链接地址">2月3日免费VPN订阅 | 18.7M/S|2025年SSR/V2ray/Clash/Shadowrocket免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-51579.htm" title="宠物打疫苗前注意事项（宠物打疫苗前要注意什么）">宠物打疫苗前注意事项（宠物打疫苗前要注意什么）</a></li>
+                        <li class="py-2"><a href="/news/article-55328.htm" title="feign post 参数对象不加@RequestBody的用法">feign post 参数对象不加@RequestBody的用法</a></li>
+                        <li class="py-2"><a href="/news/article-53674.htm" title="宠物粮生产厂家排名榜前十名有哪些（宠物粮食生产厂家）">宠物粮生产厂家排名榜前十名有哪些（宠物粮食生产厂家）</a></li>
+                        <li class="py-2"><a href="/news/article-51038.htm" title="图像处理学习笔记——BMP图片详解">图像处理学习笔记——BMP图片详解</a></li>
+                        <li class="py-2"><a href="/news/article-53151.htm" title="兽医职业资格证报名条件（兽医职业资格证书报考条件）">兽医职业资格证报名条件（兽医职业资格证书报考条件）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-9-free-high-speed-nodes.htm" title="2月9日免费VPN订阅 | 2025年19.2M/S|SSR/Shadowrocket/V2ray/Clash免费节点链接地址">2月9日免费VPN订阅 | 2025年19.2M/S|SSR/Shadowrocket/V2ray/Clash免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-52609.htm" title="动物疫苗公司招聘信息网 动物疫苗公司招聘信息网站">动物疫苗公司招聘信息网 动物疫苗公司招聘信息网站</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">免费VPN节点机场订阅官网</a> 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+    <script src="/assets/website/js/frontend/androidclash/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.animateNumber.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/scrollax.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
