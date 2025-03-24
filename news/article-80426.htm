@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://mianfeivpn.github.io/news/article-80426.htm" />
+    <title>MySQL 存储过程和函数</title>
+        <meta name="description" content="创建存储过程和函数 创建存储过程和函数就是将经常使用的一组 SQL 语句组合在一起，并将这些 SQL 语句当作一个整体存储在 MySQL 服务器 1. 创建存储过程 CREATE PROCEDURE " />
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/website/img/androidclash/favicon.ico" type="image/x-icon"/>
+    
+    <meta name="author" content="免费VPN节点机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://mianfeivpn.github.io/news/article-80426.htm" />
+    <meta property="og:site_name" content="免费VPN节点机场订阅官网" />
+    <meta property="og:title" content="MySQL 存储过程和函数" />
+    <meta property="og:image" content="https://mianfeivpn.github.io/uploads/20240305/a347ef8aafe031b66242a43a176e1048.webp" />
+        <meta property="og:release_date" content="2025-03-24T08:21:09" />
+    <meta property="og:updated_time" content="2025-03-24T08:21:09" />
+        <meta property="og:description" content="创建存储过程和函数 创建存储过程和函数就是将经常使用的一组 SQL 语句组合在一起，并将这些 SQL 语句当作一个整体存储在 MySQL 服务器 1. 创建存储过程 CREATE PROCEDURE " />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="MySQL 存储过程和函数">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/animate.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/flaticon.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/style.css" rel="stylesheet" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DCKB1K87CW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DCKB1K87CW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+                        <a class="navbar-brand" href="/">免费VPN<span></span></a>
+            
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> MENU
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                	                    <li class="nav-item"><a href="/" class="nav-link"><span>首页</span></a></li>
+                                        <li class="nav-item"><a href="/free-nodes/" class="nav-link"><span>免费节点</span></a></li>
+                                        <li class="nav-item"><a href="/paid-subscribe/" class="nav-link"><span>推荐机场</span></a></li>
+                                        <li class="nav-item"><a href="/client.htm" class="nav-link"><span>客户端</span></a></li>
+                                        <li class="nav-item"><a href="/news/" class="nav-link"><span>新闻资讯</span></a></li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="hero-wrap" style="height:350px;overflow: hidden;">
+        <div class="overlay"></div>
+        <div class="container-fluid px-0">
+            <div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
+                <img class="one-third js-fullheight align-self-end order-md-last img-fluid" href="/assets/website/img/androidclash/undraw_book_lover_mkck.svg" alt="" style="opacity: 0.5;">
+                <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
+                    <div class="text" style="top: 30%;min-width: 70%;">
+                        <h1>MySQL 存储过程和函数</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-about img ftco-section" id="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                	                <input type="hidden" id="share-website-info" data-name="V2ray X节点订阅官网" data-url="https://v2rayx.github.io">
+                  				  				  				<p></p> <h2 id="创建存储过程和函数">创建存储过程和函数</h2> <p>创建存储过程和函数就是将经常使用的一组 SQL 语句组合在一起，并将这些 SQL 语句当作一个整体存储在 MySQL 服务器</p> <h4 id="1-创建存储过程">1. 创建存储过程</h4> <pre><code class="language-sql">CREATE PROCEDURE procedure_name ([proc_param[,...]])     [characteristic ...] routine_body</code></pre> <ul> <li>procedure_name 表示所要创建的存储过程的名字</li> <li>proc_param 表示存储过程的参数</li> <li>characteristic 表示存储过程的特性</li> <li>routine_body 表示存储过程的 SQL 语句</li> </ul> <p>procedure_name 不能出现重名</p> <p>proc_param 中每个参数的语法形式如下，每个参数由三部分组成，分别为输入/输出类型、参数名和参数类型。输入/输出类型有三种类型，分别是 IN（输入类型）、OUT（输出类型）、INOUT（输入/输出类型）。param_name 表示参数名，type 表示参数类型</p> <pre><code class="language-sql">[ IN | OUT | INOUT ] param_name type</code></pre> <p>characteristic 指定存储过程的特性，有以下取值：</p> <ul> <li>LANGUAGE SQL：说明存储过程中使用的是 SQL 语言编写的</li> <li>[NOT] DETERMINISTIC：说明存储过程执行的结果是否正确，DETERMINISTIC 表示结果是确定的，即每次执行存储过程，相同的输入会得到相同的输出；NOT DETERMINISTIC 表示结果是不确定的，相同的输入可能得到不同的输出，默认为 NOT DETERMINISTIC</li> <li>{CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA}：指明子程序使用 SQL 语句的限制，CONTAINS SQL 表示子程序不包含读或者写数据的语句，NO SQL 表示子程序不包含 SQL，READS SQL DATA 表示子程序包含读数据的语句，但是不包含写数据的语句，MODIFIES SQL DATA 表示子程序包含写数据的语句</li> <li>SQL SECURITY {DEFINER | INVOKER}：指明谁有权限执行，DEFINER  表示只有定义者才能执行，INVOKER 表示拥有权限的调用者可以执行，默认为 DEFINER</li> <li>COMMENT 'string'：注释信息，可以用来描述存储过程或函数</li> </ul> <p>示例：创建存储过程，查询表 t_employee 中所有员工的薪水的存储过程</p> <pre><code class="language-sql">DELIMITER $$ CREATE PROCEDURE proc_employee() COMMENT '查询员工薪水' BEGIN 	SELECT salary FROM t_employee END; $$ DELIMITER ;</code></pre> <p>MySQL 中默认以分号 ; 作为语句结束符，存储过程中的 SQL 语句需要分号来结束，为了避免冲突，先用 DELIMITER $$ 将 MySQL 的结束符设置为 $$，再用 DELIMITER ; 将结束符恢复为分号</p> <h4 id="2-创建存储函数">2. 创建存储函数</h4> <pre><code class="language-sql">CREATE FUNCTION fun_name([func_param,[,...]]) 	[characteristic ...] routine_body</code></pre> <ul> <li>fun_name 表示函数名字</li> <li>func_param 表示函数从参数</li> <li>characteristic 表示函数特性，取值与存储过程的取值相同</li> <li>routine_body 表示函数的 SQL 语句</li> </ul> <p>func_param 中每个参数的语法形式如下，分别为参数名和参数类型</p> <pre><code class="language-sql">param_type type</code></pre> <p>还是之前的示例</p> <pre><code class="language-sql">DELIMITER $$ 	CREATE FUNCTION func_employee(id INT(4)) 		RETURNS INT(6) 	COMMENT '查询员工薪水' 	BEGIN 		SELECT salary FROM t_employee 	END; 	$$ DELIMITER ;</code></pre> <p></p> <h2 id="变量">变量</h2> <p>在 MySQL 中，可以定义和使用变量，这些变量的作用范围在 BEGIN ... END 程序段中</p> <h4 id="1-定义变量">1. 定义变量</h4> <pre><code class="language-sql">DECLARE var_name[,...] type [DEFAULT value]</code></pre> <ul> <li>关键字 DECLARE 用来声明变量</li> <li>参数 var_name 是变量的名称，可以同时定义多个变量</li> <li>参数 type 用来指定变量的类型</li> <li>DEFAULT value 子句将变量默认值设置为 value，没有使用 DEFAULT 子句时，默认值为 NULL</li> </ul> <p>示例：定义变量 sql_test，数据类型为 INT 型，默认值为 10</p> <pre><code class="language-sql">DECLARE test_sql INT DEFAULT 10;</code></pre> <h4 id="2-变量赋值">2. 变量赋值</h4> <pre><code class="language-sql">SET var_name=expr[,var_name=expr]...</code></pre> <ul> <li>关键字 SET 用来为变量赋值</li> <li>参数 var_name 是变量的名称</li> <li>参数 expr 是赋值表达式</li> </ul> <p>示例：将变量 sql_test 赋值为 30</p> <pre><code class="language-sql">SET test_sql = 30;</code></pre> <p></p> <h2 id="定义条件和处理程序">定义条件和处理程序</h2> <p>定义条件和处理程序是事先定义程序执行过程中可能遇到的问题，并且可以在处理程序中定义解决这些问题的能力</p> <h4 id="1-定义条件">1. 定义条件</h4> <pre><code class="language-sql">DECLARE condition_name CONDITION FOR condition_value condition_value: SQLSTATE[VALUE] sqlstate_value|mysql_error_code</code></pre> <ul> <li>参数 condition_name 表示条件名称</li> <li>参数 condition_value 表示条件类型</li> <li>参数 sqlstate_value 和 参数 mysql_error_code 都可以表示 MySQL 的错误</li> </ul> <p>示例：定义 ERROR 1146(42S02) 错误，名称为 can_not_find，可以用两种不同的方法来定义</p> <pre><code class="language-sql">// 方法一:使用sqlstate_value DECLARE can_not_find CONDITION FOR SQLSTATE '42S02'; // 方法二:使用mysql_error_code DECLARE can_not_find CONDITION FOR 1146;</code></pre> <h4 id="2-定义处理程序">2. 定义处理程序</h4> <pre><code class="language-sql">DECLARE handler_type HANDLER FOR condition_value[,...] proc_statement handler_type: CONTINUE|EXIT|UNDO condition_value: SQLSTATE[VALUE]sqlstate_value|condition_name|SQLWARNING|NOT FOUND|SQLEXCEPTION|mysql_error_code</code></pre> <ul> <li> <p>handler_type 指明错误的处理方式：该参数有三个取值：</p> <ul> <li>CONTINUE：表示遇到错误不处理，继续向下执行</li> <li>EXIT：表示遇到错误马上退出</li> <li>UNDO：表示遇到错误后撤回之前的操作</li> </ul> </li> <li> <p>condition_value 表示错误类型，可以有以下取值：</p> <ul> <li>SQLSTATE[VALUE]sqlstate_value 包含 5 个字符的字符串错误值</li> <li>condition_name 表示 DECLARE CONDITION 定义的错误条件名称</li> <li>SQLWARNING 匹配所有 01 开头的 SQLSTATE 错误代码</li> <li>NOT FOUND 匹配所有 02 开头的 SQLSTATE 错误代码</li> <li>SQLEXCEPTION 匹配所有没有被 SQLWARNING 或 NOT FOUND 捕获的 SQLSTATE 错误代码</li> <li>mysql_error_code 匹配数值类型错误代码</li> </ul> </li> <li> <p>proc_statement 匹配数值类型错误代码</p> </li> </ul> <p>下面是定义处理程序的几种示例方式：</p> <pre><code class="language-sql">// 方法一:捕获sqlstate_value DECLARE CONTINUE HANDLER FOR SQLSTATE '42S02' SET @info='NOT FOUND'; // 方法二:使用mysql_error_code  DECLARE CONTINUE HANDLER FOR 1146 SET @info='NOT FOUND'; // 方法三:先定义条件,然后调用 ECLARE can_not_find CONDITION FOR 1146; DECLARE CONTINUE HANDLER FOR can_not_find SET @info='NOT FOUND'; // 方法四:使用SQLWARNING DECLARE EXIT HANDLER FOR SQLWARNING  SET @info='ERROR'; // 方法五:使用NOT FOUND DECLARE EXIT HANDLER FOR NOT FOUND SET @info='NOT FOUND'; // 方法六:使用SQLEXCEPTION  DECLARE EXIT HANDLER FOR 使用SQLEXCEPTION SET @info='ERROR';</code></pre> <p></p> <h2 id="光标">光标</h2> <p>查询语句可能查询出多条记录，在存储过程和函数使用光标来逐条读取查询结果集中的记录。光标必须声明在处理程序之前，声明在变量和条件之后</p> <h4 id="1-声明光标">1. 声明光标</h4> <pre><code class="language-sql">DECLARE cursor_name CURSOR FOR select_statement;</code></pre> <ul> <li>参数 cursor_name 表示光标名称</li> <li>参数 select_statement 表示 SELECT 语句</li> </ul> <p>下面声明一个名为 cur_employee 的光标</p> <pre><code class="language-sql">DECLARE cur_employee CURSOR FOR SELECT name,age FROM t_employee;</code></pre> <h4 id="2-打开光标">2. 打开光标</h4> <pre><code class="language-sql">OPEN cursor_name;</code></pre> <ul> <li>参数 cursor_name 表示光标的名称</li> </ul> <p>下面打开一个名为 cur_employee 的光标</p> <pre><code class="language-sql">OPEN cur_employee;</code></pre> <h4 id="3-使用光标">3. 使用光标</h4> <pre><code class="language-sql">FETCH cursor_name INTO var_name[,var_name...]</code></pre> <ul> <li>cursor_name 表示光标的名称</li> <li>var_name 表示将光标中的 SELECT 语句查询出来的信息存入该参数，该参数必须在声明光标之前就定义好</li> </ul> <p>下面打开一个名为 cur_employee 的光标，将查询的数据存入 emp_name 和 emp_age 这两个变量中</p> <pre><code class="language-sql">FETCH cur_employee INTO emp_name,emp_age;</code></pre> <h4 id="4-关闭光标">4. 关闭光标</h4> <pre><code class="language-sql">CLOSE cursor_name</code></pre> <ul> <li>cursor_name 表示光标的名称</li> </ul> <p></p> <h2 id="流程控制">流程控制</h2> <h4 id="1-if-语句">1. IF 语句</h4> <pre><code class="language-sql">IF search_condition THEN statement_list  [ELSEIF search_condition THEN statement_list]...  [ELSE statement_list] END IF</code></pre> <ul> <li>参数 search_condition 表示条件判断语句</li> <li>参数 statement_list 表示不同条件的执行语句</li> </ul> <p>下面是一个 IF 语句的示例</p> <pre><code class="language-sql">IF age&gt;20 THEN SET @count1=@conut1+1; 	ELSEIF age=20 THEN @count2=@conut2+1; 	ELSE @count3=@count3+1; END IF;</code></pre> <h4 id="2-case-语句">2. CASE 语句</h4> <pre><code class="language-sql">CASE case_value 	WHEN when_value THEN statement_list 	[WHEN when_value THEN statement_list]... 	[ELSE statement_list] END CASE</code></pre> <ul> <li>参数 case_value 表示条件判断的变量</li> <li>参数 when_value 表示变量的取值</li> <li>参数 statement_list 表示不同 when_value 的执行语句</li> </ul> <p>下面的是一个 CASE 语句的示例</p> <pre><code class="language-sql">CASE age 	WHEN 20 THEN SET @count1=@count1+1; 	ELSE SET @count2=@count2+1; END CASE;</code></pre> <h4 id="3-loop-语句">3. LOOP 语句</h4> <pre><code class="language-sql">[begin_label:]LOOP 	statement_list END LOOP [end_label]</code></pre> <ul> <li>参数 begin_label 和参数 end_label 分别表示循环开始和结束的标志，必须相同，而且都可以省略</li> <li>参数 statement_list 表示需要循环执行的语句</li> </ul> <p>下面是一个 LOOP 语句的示例</p> <pre><code class="language-sql">add_num:LOOP 	SELECT @count1=@count1+1; END LOOP add_num</code></pre> <h4 id="4-leave-语句">4. LEAVE 语句</h4> <p>主要用于跳出循环</p> <pre><code class="language-sql">LEAVE label</code></pre> <ul> <li>参数 label 表示循环的标志</li> </ul> <p>下面是一个 LEAVE 语句的示例</p> <pre><code class="language-sql">add_num:LOOP 	SELECT @count1=@count1+1; 	IF @count1=100 THEN 		LEAVE add_num; END LOOP add_num</code></pre> <h4 id="5-iterate-语句">5. ITERATE 语句</h4> <p>也是用于跳出循环，不过是跳出本次循环，直接进入下次循环，类似 Java 的 continue</p> <pre><code class="language-sql">ITERATE label</code></pre> <ul> <li>参数 label 表示循环的标志</li> </ul> <p>下面是一个 ITERATE 语句的示例</p> <pre><code class="language-sql">add_num:LOOP 	SELECT @count1=@count1+1; 	IF @count1=100 THEN 		LEAVE add_num; 	ELSE IF MOD(@count1,3)=0 THEN 		ITERATE add_num; 	SELECT * FROM employee; END LOOP add_num</code></pre> <h4 id="6-repeat-语句">6. REPEAT 语句</h4> <p>REPEAT 语句是由条件的控制循环语句，当满足特定条件就会退出循环语句</p> <pre><code class="language-sql">[begin_label:]REPEAT 	statement_list 	UNTIL search_condition END REPEAT [end_label]</code></pre> <ul> <li>参数 statement_list 表示需要循环执行的语句</li> <li>参数 search_condition 表示结束循环的条件，满足该条件即结束循环</li> </ul> <p>下面是一个 REPEAT 语句的示例</p> <pre><code class="language-sql">add_num:REPEAT 	SELECT @count1=@count1+1; 	UNTIL @count1=100 END REPEAT add_num</code></pre> <h4 id="7-while-语句">7. WHILE 语句</h4> <p>WHILE 语句也是有条件控制的循环语句，与 REPEAT 语句不同的是，WHILE 语句是当满足条件时执行循环内的语句</p> <pre><code class="language-sql">[begin_label:]WHILE search_condition DO 	statement_list END WHILE [end_label]</code></pre> <ul> <li>参数 statement_list 表示需要循环执行的语句</li> <li>参数 search_condition 表示结束循环的条件，满足该条件即结束循环</li> </ul> <p>下面是一个 WHILE 语句的示例</p> <pre><code class="language-sql">WHILE @count&lt;100 DO 	SET @count=@count+1; END WHILE;</code></pre> <p></p> <h2 id="操作存储过程和函数">操作存储过程和函数</h2> <h4 id="1-调用存储过程">1. 调用存储过程</h4> <p>在 MySQL 中，使用 CALL 语句来调用存储过程</p> <pre><code class="language-sql">CALL proc_name([parameter[,...]])</code></pre> <ul> <li>proc_name 是存储过程的名称</li> <li>paramter 是指存储过程的参数</li> </ul> <h4 id="2-调用存储函数">2. 调用存储函数</h4> <p>在 MySQL 中，存储函数的使用方法和 MySQL 内部函数是一样的</p> <h4 id="3-使用-show-status-语句查看存储过程和函数的状态">3. 使用 SHOW STATUS 语句查看存储过程和函数的状态</h4> <pre><code class="language-sql">SHOW {PROCEDURE|FUNCTION} STATUS{LIKE 'pattern'}</code></pre> <ul> <li>参数 PROCEDURE 表示查询存储过程，FUNCTION 表示存储函数</li> <li>参数 LIKE 'pattern' 用来匹配存储过程或函数的名称</li> </ul> <h4 id="4-使用-show-create-语句查看存储过程和函数的定义">4. 使用 SHOW CREATE 语句查看存储过程和函数的定义</h4> <pre><code class="language-sql">SHOW CREATE {PROCEDURE|FUNCTION} proc_name</code></pre> <h4 id="5-从-information_schemaroutine-表中查看存储过程和函数的信息">5. 从 information_schema.Routine 表中查看存储过程和函数的信息</h4> <pre><code>SELECT * FROM information_schema.Routine WHERE ROUTINE_NAME='proc_name'</code></pre> <h4 id="6-修改存储过程和函数">6. 修改存储过程和函数</h4> <pre><code class="language-sql">ALTER {PROCEDURE|FUNCTION} proc_name[characteristic...]; characteristic: 	{CONTAINS SQL|NO SQL|READS SQL DATA|MODIFIES SQL DATA} |SQL SECURITY{DEFINER|INVOKER} |COMMENT 'string'</code></pre> <ul> <li>参数 proc_name 表示存储过程或函数的名称</li> <li>参数 characteristic 指定存储过程的特性： <ul> <li>CONTAINS SQL 表示子程序包含 SQL 语句，但不包含读或写数据的语句</li> <li>NO SQL 表示子程序不包含 SQL 语句</li> <li>READS SQL DATA 表示子程序中包含读数据的语句</li> <li>MODIFIES SQL DATA 表示子程序中包含写数据的语句</li> </ul> </li> <li>SQL SECURITY{DEFINER|INVOKER} 指明谁有权限执行： <ul> <li>DEFINER 表示只有定义者才能执行</li> <li>INVOKER 表示调用者可以执行</li> </ul> </li> <li>COMMENT 'string' 是注释信息</li> </ul> <h4 id="7-删除存储过程和函数">7. 删除存储过程和函数</h4> <p>通过 DROP 语句删除存储过程</p> <pre><code class="language-sql">DROP PROCEDURE proc_name;</code></pre> <p>通过 DROP FUNCTION 语句删除存储函数</p> <pre><code class="language-sql">DROP FUNCTION func_name;</code></pre> <p></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-80425.htm">@ResponseBody详解</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                	<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-65232.htm" title="宠物猫驱虫多少钱一次4（宠物猫咪驱虫多少钱）">宠物猫驱虫多少钱一次4（宠物猫咪驱虫多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-52609.htm" title="动物疫苗公司招聘信息网 动物疫苗公司招聘信息网站">动物疫苗公司招聘信息网 动物疫苗公司招聘信息网站</a></li>
+                        <li class="py-2"><a href="/news/article-58131.htm" title="济南宠物领养中心在哪儿啊（济南哪里有免费领养宠物的地方）">济南宠物领养中心在哪儿啊（济南哪里有免费领养宠物的地方）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-13-free-v2ray.htm" title="2月13日免费VPN订阅 | 2025年22.5M/S|Clash/V2ray/SSR/Shadowrocket免费节点链接地址">2月13日免费VPN订阅 | 2025年22.5M/S|Clash/V2ray/SSR/Shadowrocket免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-69024.htm" title="关于springboot启动时报错 [org/springframework/boot/autoconfigure/web/ServerPropertiesAutoConfiguration.clas">关于springboot启动时报错 [org/springframework/boot/autoconfigure/web/ServerPropertiesAutoConfiguration.clas</a></li>
+                        <li class="py-2"><a href="/news/article-50728.htm" title="动物打疫苗在什么地方（动物打疫苗在哪里打）">动物打疫苗在什么地方（动物打疫苗在哪里打）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-1-free-node-subscribe.htm" title="3月1日免费VPN订阅 | 2025年21.6M/S|Shadowrocket/SSR/V2ray/Clash免费节点链接地址">3月1日免费VPN订阅 | 2025年21.6M/S|Shadowrocket/SSR/V2ray/Clash免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-75004.htm" title="大连有影视城吗在哪里啊（新鲜出炉）">大连有影视城吗在哪里啊（新鲜出炉）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-6-free-node-subscribe.htm" title="2月6日免费VPN订阅 | 2025年21.1M/S|V2ray/Shadowrocket/Clash/SSR免费节点链接地址">2月6日免费VPN订阅 | 2025年21.1M/S|V2ray/Shadowrocket/Clash/SSR免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-76345.htm" title="CommonsCollection4反序列化链学习">CommonsCollection4反序列化链学习</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">71</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">78</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">免费VPN节点机场订阅官网</a> 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+    <script src="/assets/website/js/frontend/androidclash/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.animateNumber.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/scrollax.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

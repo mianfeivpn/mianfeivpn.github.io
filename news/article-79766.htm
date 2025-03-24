@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://mianfeivpn.github.io/news/article-79766.htm" />
+    <title>HDFS Quotas Guide（HDFS配额指南）</title>
+        <meta name="description" content="Name Quota示例  Space Quota示例 目录  			   HDFS Quotas Guide官网链接2.9.2版本HDFS Quotas Guide官网链接2.7.1版本 简介：Ha" />
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/website/img/androidclash/favicon.ico" type="image/x-icon"/>
+    
+    <meta name="author" content="免费VPN节点机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://mianfeivpn.github.io/news/article-79766.htm" />
+    <meta property="og:site_name" content="免费VPN节点机场订阅官网" />
+    <meta property="og:title" content="HDFS Quotas Guide（HDFS配额指南）" />
+    <meta property="og:image" content="https://mianfeivpn.github.io/uploads/20240305/472350fdcf73b060d26208777b056fa5.webp" />
+        <meta property="og:release_date" content="2025-03-23T08:23:50" />
+    <meta property="og:updated_time" content="2025-03-23T08:23:50" />
+        <meta property="og:description" content="Name Quota示例  Space Quota示例 目录  			   HDFS Quotas Guide官网链接2.9.2版本HDFS Quotas Guide官网链接2.7.1版本 简介：Ha" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="HDFS Quotas Guide（HDFS配额指南）">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/animate.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/flaticon.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/style.css" rel="stylesheet" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DCKB1K87CW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DCKB1K87CW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+                        <a class="navbar-brand" href="/">免费VPN<span></span></a>
+            
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> MENU
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                	                    <li class="nav-item"><a href="/" class="nav-link"><span>首页</span></a></li>
+                                        <li class="nav-item"><a href="/free-nodes/" class="nav-link"><span>免费节点</span></a></li>
+                                        <li class="nav-item"><a href="/paid-subscribe/" class="nav-link"><span>推荐机场</span></a></li>
+                                        <li class="nav-item"><a href="/client.htm" class="nav-link"><span>客户端</span></a></li>
+                                        <li class="nav-item"><a href="/news/" class="nav-link"><span>新闻资讯</span></a></li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="hero-wrap" style="height:350px;overflow: hidden;">
+        <div class="overlay"></div>
+        <div class="container-fluid px-0">
+            <div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
+                <img class="one-third js-fullheight align-self-end order-md-last img-fluid" href="/assets/website/img/androidclash/undraw_book_lover_mkck.svg" alt="" style="opacity: 0.5;">
+                <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
+                    <div class="text" style="top: 30%;min-width: 70%;">
+                        <h1>HDFS Quotas Guide（HDFS配额指南）</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-about img ftco-section" id="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                	                <input type="hidden" id="share-website-info" data-name="V2ray X节点订阅官网" data-url="https://v2rayx.github.io">
+                  				  				  				  			 <div id="log-box">  				<div id="catalog"><ul id="catalog-ul"> <li><i class="be be-arrowright"></i> <a href="#title-0" title="Name Quota示例">Name Quota示例</a></li> <li><i class="be be-arrowright"></i> <a href="#title-1" title="Space Quota示例">Space Quota示例</a></li> </ul><span class="log-zd"><span class="log-close"><a title="隐藏目录"><i class="be be-cross"></i><strong>目录</strong></a></span></span></div>  			</div> <div id="content_views" class="htmledit_views"> <article class="_2rhmJa" style="font-size: 16px;" rel="nofollow"> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://links.jianshu.com/go?to=http%3A%2F%2Fhadoop.apache.org%2Fdocs%2Fstable%2Fhadoop-project-dist%2Fhadoop-hdfs%2FHdfsQuotaAdminGuide.html"  target="_blank" rel="nofollow">HDFS Quotas Guide官网链接2.9.2版本</a><br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://links.jianshu.com/go?to=https%3A%2F%2Fhadoop.apache.org%2Fdocs%2Fr2.7.1%2Fhadoop-project-dist%2Fhadoop-hdfs%2FHdfsQuotaAdminGuide.html"  target="_blank" rel="nofollow">HDFS Quotas Guide官网链接2.7.1版本</a></p> <p>简介：Hadoop提供两种配额（quota）模式，name quota和space quota。name quota限制路径的文件（含文件夹）数目，space quota限制的”磁盘”占用空间。可以通过此功能实现团队的存储使用管理。</p> </h1> <ul> <li>Set the name quota to be N for each directory. Best effort for each directory, with faults reported if N is not a positive long integer, the directory does not exist or it is a file, or the directory would immediately exceed the new quota.<br /><code>$ hadoop dfsadmin -setQuota &lt;max_number&gt; &lt;directory&gt;</code> </li> <li>Remove any name quota for each directory. Best effort for each directory, with faults reported if the directory does not exist or it is a file. It is not a fault if the directory has no quota.<br /><code>$ hadoop dfsadmin -setSpaceQuota &lt;max_size&gt; &lt;directory&gt;</code> </li> <li>Remove any name quota for each directory. Best effort for each directory, with faults reported if the directory does not exist or it is a file. It is not a fault if the directory has no quota.<br /><code>$ hadoop dfsadmin -clrQuota &lt;directory&gt;</code> </li> <li>Remove any space quota for each directory. Best effort for each directory, with faults reported if the directory does not exist or it is a file. It is not a fault if the directory has no quota.<br /><code>$ hadoop dfsadmin -clrSpaceQuota &lt;directory&gt;</code> </li> </ul> <span class="directory"></span><h4 id="title-0">Name Quota示例</h4> <p>首先测试name quota，进行如下操作：</p> <ul> <li>准备hdfs路径，设置name quota，文件数量限制为5</li> </ul> <pre class="has"><code class="shell">$hdfs dfs -mkdir /name_quota $hdfs dfsadmin -setQuota 5 /name_quota</code></pre> <pre class="has"><code>$touch 1 $hdfs dfs -copyFromLocal 1 /name_quota/1 $hdfs dfs -copyFromLocal 1 /name_quota/2 $hdfs dfs -copyFromLocal 1 /name_quota/3 $hdfs dfs -copyFromLocal 1 /name_quota/4 $hdfs dfs -copyFromLocal 1 /name_quota/5 copyFromLocal: The NameSpace quota (directories and files) of directory /name_quota is exceeded: quota=5 file count=6</code></pre> <p>创建一个临时文件“1“，并将它复制到指定hdfs路径下，发现，当复制到第5个时失败，提示显示达到quota限制，说明quota生效，同时，我们设置quota_max_num为5，但只放了4个文件就满了，说明这个数字限制是包含文件夹的。<br /> 实际上是可以理解的，在HDFS中，无论文件和文件夹的基本抽象是一样的，占用基本同样的元数据信息，name quota实际上是元数据信息的配额。</p> <span class="directory"></span><h4 id="title-1">Space Quota示例</h4> <ul> <li>创建测试路径并设置space quota</li> </ul> <pre class="has"><code class="shell">$hdfs dfs -mkdir /space_quota $hdfs dfsadmin -setSpaceQUota 50m /space_quota</code></pre> <pre class="has"><code class="shell">$mkfile 10m 10m $hdfs dfs -copyFromLocal 10m /space_quota/10m_1</code></pre> <p>利用mkfile命令创建一个大小10m的文件（我用的是Mac，Linux系统使用dd命令创建指定大小文件），预期是在这个hdfs路径下可以存放5个10m的文件，第六个会超出，但实际情况是，第一个就失败了，报错如下：<br /><code>Caused by: org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.hdfs.protocol.DSQuotaExceededException): The DiskSpace quota of /space_quota is exceeded: quota = 52428800 B = 50 MB but diskspace consumed = 134217728 B = 128 MB</code><br /> 看提示就理解，因为HDFS是以block为单位进行实际存储的，对于一个10m的文件，仍然会打成一个block存储，我的HDFS block size是128m，所以space quota配置50m，一个block也放不下，自然失败，因此进行一下改动，重新设置：</p> <pre class="has"><code class="shell">$hdfs dfsadmin -setSpaceQUota 1024m /space_quota $mkfile 128m 128m $ hdfs dfs -copyFromLocal 128m /space_quota/128m_1 $ hdfs dfs -copyFromLocal 128m /space_quota/128m_2 $ hdfs dfs -copyFromLocal 128m /space_quota/128m_3 $ hdfs dfs -copyFromLocal 128m /space_quota/128m_4 $ hdfs dfs -copyFromLocal 128m /space_quota/128m_5 $ hdfs dfs -copyFromLocal 128m /space_quota/128m_6 $ hdfs dfs -copyFromLocal 128m /space_quota/128m_7 $ hdfs dfs -copyFromLocal 128m /space_quota/128m_8 $ hdfs dfs -copyFromLocal 128m /space_quota/128m_9</code></pre> <p>1024m的配额，可以放8个128m文件，在放第九个时，报错，核心信息如下：</p> <p><code>18/05/18 16:13:01 WARN hdfs.DFSClient: DataStreamer Exception org.apache.hadoop.hdfs.protocol.DSQuotaExceededException: The DiskSpace quota of /space_quota is exceeded: quota = 1073741824 B = 1 GB but diskspace consumed = 1207959552 B = 1.13 GB</code><br /> 符合预期，成功限制了规定路径下的存储空间配额。</p> <p>另外，经过测试（示例不详述），name quota和space quota可以同时作用于同一路径。</p> </article> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-79067.htm">宠物猫大概多少钱（宠物猫大概多少钱一条）</a></p>
+                                        <p>下一个：<a href="/news/article-79767.htm">大成路宠爱国际动物医院电话号码是多少（宠爱国际动物医院科怡路店电话）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                	<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-58785.htm" title="天津宠物猫领养中心（天津宠物领养 猫）">天津宠物猫领养中心（天津宠物领养 猫）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-16-free-v2ray.htm" title="2月16日免费VPN订阅 | 2025年18M/S|V2ray/Shadowrocket/Clash/SSR免费节点链接地址">2月16日免费VPN订阅 | 2025年18M/S|V2ray/Shadowrocket/Clash/SSR免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-66473.htm" title="宠物粮食品牌都有什么名字呢英文（宠物粮食品牌起名大全）">宠物粮食品牌都有什么名字呢英文（宠物粮食品牌起名大全）</a></li>
+                        <li class="py-2"><a href="/news/article-59847.htm" title="动物医院手抄报（动物医院手抄报图片大全）">动物医院手抄报（动物医院手抄报图片大全）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-19-free-node-subscribe.htm" title="3月19日免费VPN订阅 | 2025年18.8M/S|SSR/V2ray/Shadowrocket/Clash免费节点链接地址">3月19日免费VPN订阅 | 2025年18.8M/S|SSR/V2ray/Shadowrocket/Clash免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-51039.htm" title="摩托车碟锁哪个牌子好(摩托车碟锁的安全性能怎么样)">摩托车碟锁哪个牌子好(摩托车碟锁的安全性能怎么样)</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-23-free-node-subscribe.htm" title="3月23日免费VPN订阅 | 2025年18.7M/S|Shadowrocket/V2ray/Clash/SSR免费节点链接地址">3月23日免费VPN订阅 | 2025年18.7M/S|Shadowrocket/V2ray/Clash/SSR免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-69681.htm" title="Java 实现选择排序">Java 实现选择排序</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-5-node-share.htm" title="3月5日免费VPN订阅 | 2025年20.9M/S|Shadowrocket/V2ray/Clash/SSR免费节点链接地址">3月5日免费VPN订阅 | 2025年20.9M/S|Shadowrocket/V2ray/Clash/SSR免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-52091.htm" title="一只猫多少钱最便宜（一只家猫多少钱）">一只猫多少钱最便宜（一只家猫多少钱）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">71</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">78</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">免费VPN节点机场订阅官网</a> 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+    <script src="/assets/website/js/frontend/androidclash/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.animateNumber.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/scrollax.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
