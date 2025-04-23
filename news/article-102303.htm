@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://mianfeivpn.github.io/news/article-102303.htm" />
+    <title>vue使用el-tabs实现标签页（内存+vuex）</title>
+        <meta name="description" content="vue使用el-tabs实现标签页（内存+vuex） 效果图： 1： 2： 3：内存中 这是一个组件，例如：pageTabs.vue（组件是可以做到独立监听路由变化的，所以不需要外部调用什么内部的方法" />
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/website/img/androidclash/favicon.ico" type="image/x-icon"/>
+    
+    <meta name="author" content="免费VPN节点机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://mianfeivpn.github.io/news/article-102303.htm" />
+    <meta property="og:site_name" content="免费VPN节点机场订阅官网" />
+    <meta property="og:title" content="vue使用el-tabs实现标签页（内存+vuex）" />
+    <meta property="og:image" content="https://mianfeivpn.github.io/uploads/20240305/0d61549d02105170d986683facf79432.webp" />
+        <meta property="og:release_date" content="2025-04-23T08:43:14" />
+    <meta property="og:updated_time" content="2025-04-23T08:43:14" />
+        <meta property="og:description" content="vue使用el-tabs实现标签页（内存+vuex） 效果图： 1： 2： 3：内存中 这是一个组件，例如：pageTabs.vue（组件是可以做到独立监听路由变化的，所以不需要外部调用什么内部的方法" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue使用el-tabs实现标签页（内存+vuex）">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/animate.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/flaticon.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DCKB1K87CW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DCKB1K87CW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+                        <a class="navbar-brand" href="/">免费VPN<span></span></a>
+            
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> MENU
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                	                    <li class="nav-item"><a href="/" class="nav-link"><span>首页</span></a></li>
+                                        <li class="nav-item"><a href="/free-nodes/" class="nav-link"><span>免费节点</span></a></li>
+                                        <li class="nav-item"><a href="/paid-subscribe/" class="nav-link"><span>推荐机场</span></a></li>
+                                        <li class="nav-item"><a href="/client.htm" class="nav-link"><span>客户端</span></a></li>
+                                        <li class="nav-item"><a href="/news/" class="nav-link"><span>新闻资讯</span></a></li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="hero-wrap" style="height:350px;overflow: hidden;">
+        <div class="overlay"></div>
+        <div class="container-fluid px-0">
+            <div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
+                <img class="one-third js-fullheight align-self-end order-md-last img-fluid" href="/assets/website/img/androidclash/undraw_book_lover_mkck.svg" alt="" style="opacity: 0.5;">
+                <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
+                    <div class="text" style="top: 30%;min-width: 70%;">
+                        <h1>vue使用el-tabs实现标签页（内存+vuex）</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-about img ftco-section" id="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                	                <input type="hidden" id="share-website-info" data-name="V2ray X节点订阅官网" data-url="https://v2rayx.github.io">
+                <div class="xcblog-blog-detail">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <p><strong>vue使用el-tabs实现标签页（内存+vuex）</strong><br /> 效果图：<br /> 1：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220603/5f11fd0dc6106f3da6e61d04bf296920.jpg" alt="vue使用el-tabs实现标签页（内存+vuex）"></p> <p>2：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220603/0df036f54f788a6d1c65347f7ae18317.jpg" alt="vue使用el-tabs实现标签页（内存+vuex）"><br /> 3：内存中<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220603/d2c4c5445ff259346fffcbe7f46f7a61.jpg" alt="vue使用el-tabs实现标签页（内存+vuex）"></p> <h6><a id="pageTabsvueeltabs_11" rel="nofollow"></a>这是一个组件，例如：pageTabs.vue（组件是可以做到独立监听路由变化的，所以不需要外部调用什么内部的方法，所以可以抽离成为一个组件），监听路由改变进行新增标签，以及el-tabs组件的切换，删除</h6> <h6><a id="_12" rel="nofollow"></a>代码：</h6> <pre><code class="prism language-bash"><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span><span class="token operator">&lt;</span>div<span class="token assign-left variable">class</span><span class="token operator">=</span><span class="token string">"page-tabs-index"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>el-tabs v-model<span class="token operator">=</span><span class="token string">"activeRoute"</span><span class="token assign-left variable">type</span><span class="token operator">=</span><span class="token string">"card"</span> :closable<span class="token operator">=</span><span class="token string">"closable"</span> @tab-click<span class="token operator">=</span><span class="token string">"clickTab"</span> @edit<span class="token operator">=</span><span class="token string">"handleTabsEdit"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>el-tab-pane         :key<span class="token operator">=</span><span class="token string">"index"</span>         v-for<span class="token operator">=</span><span class="token string">"(item, index) in tabs"</span>         :label<span class="token operator">=</span><span class="token string">"item.title"</span>         :name<span class="token operator">=</span><span class="token string">"item.route"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>span<span class="token assign-left variable">slot</span><span class="token operator">=</span><span class="token string">"label"</span> @click.middle<span class="token operator">=</span><span class="token string">"removeTabByMiddle(item.route)"</span><span class="token operator">&gt;</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">{<!-- --></span>item.title<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span>/span<span class="token operator">&gt;</span><span class="token operator">&lt;</span>/el-tab-pane<span class="token operator">&gt;</span><span class="token operator">&lt;</span>/el-tabs<span class="token operator">&gt;</span><span class="token operator">&lt;</span>/div<span class="token operator">&gt;</span><span class="token operator">&lt;</span>/template<span class="token operator">&gt;</span><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span><span class="token builtin class-name">export</span> default<span class="token punctuation">{<!-- --></span><span class="token function-name function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         return<span class="token punctuation">{<!-- --></span>           closable: false,           activeRoute:<span class="token string">''</span>,           tabs:<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">}</span>,       methods:<span class="token punctuation">{<!-- --></span>         // 增删tabs         handleTabsEdit<span class="token punctuation">(</span>targetName,action<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>           // console.log<span class="token punctuation">(</span><span class="token string">'tab增删:'</span>,targetName,action<span class="token punctuation">)</span><span class="token punctuation">;</span>           if<span class="token punctuation">(</span>action<span class="token operator">==</span><span class="token operator">=</span><span class="token string">'remove'</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>             this.methods<span class="token punctuation">(</span><span class="token string">'removeTab'</span>,targetName<span class="token punctuation">)</span><span class="token punctuation">;</span>             this.methods<span class="token punctuation">(</span><span class="token string">'checkClosable'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span>,         // 鼠标中键删除         removeTabByMiddle<span class="token punctuation">(</span>route<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>           if<span class="token punctuation">(</span>this.closable<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>             this.methods<span class="token punctuation">(</span><span class="token string">'removeTab'</span>,route<span class="token punctuation">)</span><span class="token punctuation">;</span>             this.methods<span class="token punctuation">(</span><span class="token string">'checkClosable'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span>,         // 点击tab,item是被选中的标签的vue实例         clickTab<span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>           if<span class="token punctuation">(</span>this.<span class="token variable">$route</span>.name<span class="token operator">==</span><span class="token operator">=</span> item.name<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token builtin class-name">return</span><span class="token punctuation">;</span><span class="token punctuation">}</span>           // console.log<span class="token punctuation">(</span><span class="token string">'tab切换：'</span>, item.name<span class="token punctuation">)</span><span class="token punctuation">;</span>           this.<span class="token variable">$router</span>.push<span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>name:item.name<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span>,         // 这里需要配合keep-alive的includeAPI，设置vuex的缓存list，以实现tab关闭后vue不缓存该页面         // 加载tabs缓存<span class="token function-name function">loadTabs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>           const pageTabs<span class="token operator">=</span> sessionStorage.getItem<span class="token punctuation">(</span><span class="token string">'page-tabs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">if</span><span class="token punctuation">(</span>pageTabs<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>             this.tabs<span class="token operator">=</span> JSON.parse<span class="token punctuation">(</span>pageTabs<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span>           this.<span class="token variable">$store</span>.commit<span class="token punctuation">(</span><span class="token string">'setKeepAliveList'</span>,this.tabs.map<span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token operator">&gt;</span>i.route<span class="token punctuation">))</span><span class="token punctuation">;</span><span class="token punctuation">}</span>,          // tab切换更新<span class="token function-name function">updateTabs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>           const route<span class="token operator">=</span> this.<span class="token variable">$route</span>.name<span class="token punctuation">;</span>           const title<span class="token operator">=</span> route<span class="token punctuation">;</span>           if<span class="token punctuation">(</span><span class="token operator">!</span>route<span class="token operator">||</span> route<span class="token operator">==</span><span class="token operator">=</span><span class="token string">'index'</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>             // 这里是处理layout中第一次加载会是null，后续由监听<span class="token variable">$route</span>更新，<span class="token punctuation">(</span>index路由是引导用的，不需要<span class="token punctuation">)</span>             // 而如果是当从没有tabs的页面跳转过来时，不走下面，将不会变更当前激活<span class="token builtin class-name">return</span><span class="token punctuation">;</span><span class="token punctuation">}</span>           // 新增<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>this.tabs.find<span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token operator">&gt;</span> i.route<span class="token operator">==</span><span class="token operator">=</span> route<span class="token punctuation">))</span><span class="token punctuation">{<!-- --></span>             this.tabs.push<span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span> route, title<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span>           this.activeRoute<span class="token operator">=</span> route<span class="token punctuation">;</span>           // this.<span class="token variable">$route</span>.meta.keepAlive<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">;</span>           // 缓存tabs           sessionStorage.setItem<span class="token punctuation">(</span><span class="token string">'page-tabs'</span>, JSON.stringify<span class="token punctuation">(</span>this.tabs<span class="token punctuation">))</span><span class="token punctuation">;</span>           this.<span class="token variable">$store</span>.commit<span class="token punctuation">(</span><span class="token string">'setKeepAliveList'</span>,this.tabs.map<span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token operator">&gt;</span>i.route<span class="token punctuation">))</span><span class="token punctuation">;</span><span class="token punctuation">}</span>,          // 移除tab         removeTab<span class="token punctuation">(</span>route<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>           // 保存index<span class="token builtin class-name">let</span> index<span class="token operator">=</span> this.tabs.findIndex<span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token operator">&gt;</span> i.route<span class="token operator">==</span><span class="token operator">=</span> route<span class="token punctuation">)</span><span class="token punctuation">;</span>           this.tabs<span class="token operator">=</span> this.tabs.filter<span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token operator">&gt;</span> i.route<span class="token operator">!=</span><span class="token operator">=</span> route<span class="token punctuation">)</span><span class="token punctuation">;</span>           this.<span class="token variable">$store</span>.commit<span class="token punctuation">(</span><span class="token string">'setKeepAliveList'</span>,this.tabs.map<span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token operator">&gt;</span>i.route<span class="token punctuation">))</span><span class="token punctuation">;</span>           // 如果删除的是当前的route<span class="token keyword">if</span><span class="token punctuation">(</span>this.activeRoute<span class="token operator">==</span><span class="token operator">=</span> route<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>             // 将当前激活route切换为刚才删除的后一个<span class="token keyword">if</span><span class="token punctuation">(</span>index<span class="token operator">&gt;</span> this.tabs.length-1<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>               index -<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token punctuation">}</span>             this.activeRoute<span class="token operator">=</span> this.tabs<span class="token punctuation">[</span>index<span class="token punctuation">]</span>.route<span class="token punctuation">;</span>             // this.<span class="token variable">$route</span>.meta.keepAlive<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span>             this.<span class="token variable">$router</span>.push<span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span> name: this.activeRoute<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span>           // 缓存tabs           sessionStorage.setItem<span class="token punctuation">(</span><span class="token string">'page-tabs'</span>, JSON.stringify<span class="token punctuation">(</span>this.tabs<span class="token punctuation">))</span><span class="token punctuation">;</span><span class="token punctuation">}</span>,          // 检查是否可以继续删除<span class="token function-name function">checkClosable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>           this.closable<span class="token operator">=</span> this.tabs.length<span class="token operator">&gt;</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span>,<span class="token function-name function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>           // this.lists<span class="token operator">=</span> this.<span class="token variable">$store</span>.state.other.houseList<span class="token punctuation">;</span><span class="token punctuation">}</span>,<span class="token function-name function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         this.loadTabs<span class="token punctuation">(</span><span class="token punctuation">)</span>         this.updateTabs<span class="token punctuation">(</span><span class="token punctuation">)</span>         this.checkClosable<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span>,       watch:<span class="token punctuation">{<!-- --></span>         $<span class="token function-name function">route</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>           this.loadTabs<span class="token punctuation">(</span><span class="token punctuation">)</span>           this.updateTabs<span class="token punctuation">(</span><span class="token punctuation">)</span>           this.checkClosable<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span>/script<span class="token operator">&gt;</span><span class="token operator">&lt;</span>style scoped<span class="token assign-left variable">lang</span><span class="token operator">=</span><span class="token string">"scss"</span><span class="token operator">&gt;</span> // 组件高度<span class="token variable">$tabLineHeight</span>:30px<span class="token punctuation">;</span> // 边框颜色<span class="token variable">$borderColor</span><span class="token builtin class-name">:</span><span class="token comment">#488ba0;</span> // 未激活的以及tab本身的背景<span class="token variable">$background</span><span class="token builtin class-name">:</span><span class="token comment">#09142e;</span> // 激活的标签的背景<span class="token variable">$background</span>-active:<span class="token comment">#488ba0;</span> // 未激活标签的字体颜色<span class="token variable">$fontColor</span><span class="token builtin class-name">:</span><span class="token comment">#30c0cd;</span> .page-tabs-index<span class="token punctuation">{<!-- --></span>   height:<span class="token variable">$tabLineHeight</span><span class="token punctuation">;</span>   ::v-deep .el-tabs<span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span>   // 底部横线   ::v-deep .el-tabs__header<span class="token punctuation">{<!-- --></span>     height:<span class="token variable">$tabLineHeight</span><span class="token punctuation">;</span>     background:<span class="token variable">$background</span><span class="token punctuation">;</span>     box-sizing: border-box<span class="token punctuation">;</span>     border-bottom: 1px solid<span class="token variable">$borderColor</span><span class="token punctuation">;</span><span class="token punctuation">}</span>   // 左右滚动按钮   ::v-deep .el-tabs__nav-prev<span class="token punctuation">{<!-- --></span>     height:<span class="token variable">$tabLineHeight</span><span class="token punctuation">;</span>     line-height:<span class="token variable">$tabLineHeight</span><span class="token punctuation">;</span><span class="token punctuation">}</span>   ::v-deep .el-tabs__nav-next<span class="token punctuation">{<!-- --></span>     height:<span class="token variable">$tabLineHeight</span><span class="token punctuation">;</span>     line-height:<span class="token variable">$tabLineHeight</span><span class="token punctuation">;</span><span class="token punctuation">}</span>   ::v-deep .el-tabs__nav<span class="token punctuation">{<!-- --></span>     border-radius:<span class="token number">0</span><span class="token punctuation">;</span>     border-left: none<span class="token punctuation">;</span>     border-right: none<span class="token punctuation">;</span>     border-top: none<span class="token punctuation">;</span><span class="token punctuation">}</span>    ::v-deep .el-tabs__item<span class="token punctuation">{<!-- --></span>     height:<span class="token variable">$tabLineHeight</span><span class="token punctuation">;</span>     line-height:<span class="token variable">$tabLineHeight</span><span class="token punctuation">;</span>     border-color:<span class="token variable">$borderColor</span><span class="token punctuation">;</span>     color:<span class="token comment">#fff;</span>     border-right: 1px solid<span class="token variable">$borderColor</span><span class="token punctuation">;</span>     //border-radius: 3px 3px<span class="token number">0</span><span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span>    // 左侧第一个   ::v-deep .el-tabs__item.is-active:first-child<span class="token punctuation">{<!-- --></span>     border-left: none<span class="token punctuation">;</span><span class="token punctuation">}</span>    ::v-deep .el-tabs__item:not<span class="token punctuation">(</span>.is-disabled<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>     color:<span class="token variable">$fontColor</span><span class="token punctuation">;</span>     border-left: none<span class="token punctuation">;</span>     border-top: 2px solid transparent<span class="token punctuation">;</span><span class="token punctuation">}</span>    ::v-deep .el-tabs__item.is-active<span class="token punctuation">{<!-- --></span>     border-bottom: 1px solid<span class="token variable">$background</span>-active<span class="token punctuation">;</span>     border-top: 2px solid<span class="token variable">$borderColor</span><span class="token punctuation">;</span>     border-right: 1px solid<span class="token variable">$borderColor</span><span class="token punctuation">;</span>     background:<span class="token variable">$background</span>-active<span class="token punctuation">;</span>     color:<span class="token comment">#fff;</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span>/style<span class="token operator">&gt;</span></code></pre> <h6><a id="vuex_204" rel="nofollow"></a>然后还需要创建一个vuex</h6> <pre><code class="prism language-bash"><span class="token builtin class-name">export</span> default<span class="token punctuation">{<!-- --></span>   name:<span class="token string">'pageTabs'</span>,   state:<span class="token punctuation">{<!-- --></span>       keepAliveList:<span class="token punctuation">[</span><span class="token punctuation">]</span>,<span class="token punctuation">}</span>,   mutations:<span class="token punctuation">{<!-- --></span>     setKeepAliveList<span class="token punctuation">(</span>state, list<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>       state.keepAliveList<span class="token operator">=</span> list<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <h6><a id="Appvue_220" rel="nofollow"></a>然后就去入口页面引入使用即可，例如App.vue</h6> <pre><code class="prism language-bash"><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span><span class="token operator">&lt;</span>div<span class="token assign-left variable">id</span><span class="token operator">=</span><span class="token string">"app"</span><span class="token assign-left variable">class</span><span class="token operator">=</span><span class="token string">"biggbox"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>pageTabs<span class="token operator">&gt;</span><span class="token operator">&lt;</span>/pageTabs<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">!</span>-- 中部 --<span class="token operator">&gt;</span><span class="token operator">&lt;</span>transition<span class="token operator">&gt;</span><span class="token operator">&lt;</span>router-view<span class="token operator">&gt;</span><span class="token operator">&lt;</span>/router-view<span class="token operator">&gt;</span><span class="token operator">&lt;</span>/transition<span class="token operator">&gt;</span><span class="token operator">&lt;</span>/div<span class="token operator">&gt;</span><span class="token operator">&lt;</span>/template<span class="token operator">&gt;</span></code></pre> <h5><a id="keepAlive_235" rel="nofollow"></a>还可以用keepAlive</h5> <pre><code class="prism language-bash"><span class="token operator">&lt;</span>keep-alive :include<span class="token operator">=</span><span class="token string">"keepAliveList"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>router-view<span class="token operator">&gt;</span><span class="token operator">&lt;</span>/router-view<span class="token operator">&gt;</span><span class="token operator">&lt;</span>/keep-alive<span class="token operator">&gt;</span></code></pre> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-101510.htm">广州宠物救助站电话号码查询（广州宠物狗救助站电话）</a></p>
+                                        <p>下一个：<a href="/news/article-102307.htm">Git用户签名的其他操作</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                	<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-83245.htm" title="动物疫苗接种简报内容有哪些（动物预防接种计划表）">动物疫苗接种简报内容有哪些（动物预防接种计划表）</a></li>
+                        <li class="py-2"><a href="/news/article-81144.htm" title="nginx反向代理原理简介">nginx反向代理原理简介</a></li>
+                        <li class="py-2"><a href="/news/article-67108.htm" title="动物接种疫苗后多久产生抗体了（动物打疫苗后多久能杀了吃）">动物接种疫苗后多久产生抗体了（动物打疫苗后多久能杀了吃）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-28-free-node-subscribe-links.htm" title="3月28日免费VPN订阅 | 2025年20.5M/S|V2ray/Shadowrocket/SSR/Clash免费节点链接地址">3月28日免费VPN订阅 | 2025年20.5M/S|V2ray/Shadowrocket/SSR/Clash免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-98564.htm" title="宠物粮食生产厂家排名前十 宠物粮食生产厂家排名前十名">宠物粮食生产厂家排名前十 宠物粮食生产厂家排名前十名</a></li>
+                        <li class="py-2"><a href="/news/article-90477.htm" title="Java Random随机数">Java Random随机数</a></li>
+                        <li class="py-2"><a href="/news/article-82537.htm" title="东北农业大学动物医学院官网2023年研究生复试分数线（东北农业大学动物学考研）">东北农业大学动物医学院官网2023年研究生复试分数线（东北农业大学动物学考研）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-12-free-high-speed-nodes.htm" title="3月12日免费VPN订阅 | 2025年21.4M/S|Clash/V2ray/SSR/Shadowrocket免费节点链接地址">3月12日免费VPN订阅 | 2025年21.4M/S|Clash/V2ray/SSR/Shadowrocket免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-79066.htm" title="宠物粮厂家招聘最新信息查询（宠物粮生产厂家）">宠物粮厂家招聘最新信息查询（宠物粮生产厂家）</a></li>
+                        <li class="py-2"><a href="/news/article-82536.htm" title="JS中数字，字符串，null和undefined转换为bool是true还是false总结">JS中数字，字符串，null和undefined转换为bool是true还是false总结</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">68</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">免费VPN节点机场订阅官网</a> 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+    <script src="/assets/website/js/frontend/androidclash/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.animateNumber.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/scrollax.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

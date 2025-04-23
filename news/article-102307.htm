@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://mianfeivpn.github.io/news/article-102307.htm" />
+    <title>Git用户签名的其他操作</title>
+        <meta name="description" content="目录  1、修改用户签名 2、取消用户签名 3、用户签名的优先级 4、总结本文用到的Git命令   1、修改用户签名 其实很简单，就是重新执行git config命令，换个用户名和邮箱地址就可以了，新" />
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/website/img/androidclash/favicon.ico" type="image/x-icon"/>
+    
+    <meta name="author" content="免费VPN节点机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://mianfeivpn.github.io/news/article-102307.htm" />
+    <meta property="og:site_name" content="免费VPN节点机场订阅官网" />
+    <meta property="og:title" content="Git用户签名的其他操作" />
+    <meta property="og:image" content="https://mianfeivpn.github.io/uploads/20240305/50d3c951e1c32fce8dabfe830f0b12c0.webp" />
+        <meta property="og:release_date" content="2025-04-23T08:43:14" />
+    <meta property="og:updated_time" content="2025-04-23T08:43:14" />
+        <meta property="og:description" content="目录  1、修改用户签名 2、取消用户签名 3、用户签名的优先级 4、总结本文用到的Git命令   1、修改用户签名 其实很简单，就是重新执行git config命令，换个用户名和邮箱地址就可以了，新" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Git用户签名的其他操作">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/animate.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/flaticon.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DCKB1K87CW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DCKB1K87CW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+                        <a class="navbar-brand" href="/">免费VPN<span></span></a>
+            
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> MENU
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                	                    <li class="nav-item"><a href="/" class="nav-link"><span>首页</span></a></li>
+                                        <li class="nav-item"><a href="/free-nodes/" class="nav-link"><span>免费节点</span></a></li>
+                                        <li class="nav-item"><a href="/paid-subscribe/" class="nav-link"><span>推荐机场</span></a></li>
+                                        <li class="nav-item"><a href="/client.htm" class="nav-link"><span>客户端</span></a></li>
+                                        <li class="nav-item"><a href="/news/" class="nav-link"><span>新闻资讯</span></a></li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="hero-wrap" style="height:350px;overflow: hidden;">
+        <div class="overlay"></div>
+        <div class="container-fluid px-0">
+            <div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
+                <img class="one-third js-fullheight align-self-end order-md-last img-fluid" href="/assets/website/img/androidclash/undraw_book_lover_mkck.svg" alt="" style="opacity: 0.5;">
+                <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
+                    <div class="text" style="top: 30%;min-width: 70%;">
+                        <h1>Git用户签名的其他操作</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-about img ftco-section" id="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                	                <input type="hidden" id="share-website-info" data-name="V2ray X节点订阅官网" data-url="https://v2rayx.github.io">
+                <div class="xcblog-blog-detail">
+                      				  				  				<div class="toc"> <div class="toc-container-header">目录</div> <ul> <li><a href="#1%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E7%AD%BE%E5%90%8D" rel="nofollow">1、修改用户签名</a></li> <li><a href="#2%E5%8F%96%E6%B6%88%E7%94%A8%E6%88%B7%E7%AD%BE%E5%90%8D" rel="nofollow">2、取消用户签名</a></li> <li><a href="#3%E7%94%A8%E6%88%B7%E7%AD%BE%E5%90%8D%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7" rel="nofollow">3、用户签名的优先级</a></li> <li><a href="#4%E6%80%BB%E7%BB%93%E6%9C%AC%E6%96%87%E7%94%A8%E5%88%B0%E7%9A%84git%E5%91%BD%E4%BB%A4" rel="nofollow">4、总结本文用到的Git命令</a></li> </ul> </div> <h2 id="1修改用户签名">1、修改用户签名</h2> <p>其实很简单，就是重新执行<code>git config</code>命令，换个用户名和邮箱地址就可以了，新配置的内容会覆盖之前配置的内容，达到了用户签名的修改。</p> <p>以系统用户为例：</p> <pre><code class="language-bash"># 查看系统级别的用户配置 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ git config --list --system diff.astextplain.textconv=astextplain filter.lfs.clean=git-lfs clean -- %f filter.lfs.smudge=git-lfs smudge -- %f filter.lfs.process=git-lfs filter-process filter.lfs.required=true http.sslbackend=openssl http.sslcainfo=F:/DevInstall/Git/GitforWindows/mingw64/ssl/certs/ca-bundle.crt core.autocrlf=true core.fscache=true core.symlinks=false credential.helper=manager user.name=tang_s  # 这里是tang_s user.email=tang_s@126.com  # 修改系统用户配置 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ git config --system user.name 'zhu_bj'  # 查看系统级别的用户配置 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ git config --list --system diff.astextplain.textconv=astextplain filter.lfs.clean=git-lfs clean -- %f filter.lfs.smudge=git-lfs smudge -- %f filter.lfs.process=git-lfs filter-process filter.lfs.required=true http.sslbackend=openssl http.sslcainfo=F:/DevInstall/Git/GitforWindows/mingw64/ssl/certs/ca-bundle.crt core.autocrlf=true core.fscache=true core.symlinks=false credential.helper=manager user.name=zhu_bj	# 这里是zhu_bj user.email=tang_s@126.com</code></pre> <blockquote> <p>提示：</p> <ul> <li>系统级别的配置对应的是所有操作系统的用户，全局配置对应的是单个系统用户对所有Git仓库的配置，本地配置是对单个Git仓库的配置。</li> <li>所以综上所述，在一台计算机中，系统用户只能有一个，全局用户是每一个用户可以设置一个，本地用户可以设置多个（一个本地版本库对应一个）。</li> </ul> </blockquote> <h2 id="2取消用户签名">2、取消用户签名</h2> <p><strong>语法：</strong></p> <pre><code>git config --配置文件范围 --unset user.name git config --配置文件范围 --unset user.email</code></pre> <p><strong>示例：取消系统用户的用户名和邮箱设置：</strong></p> <pre><code class="language-bash"># 取消系统用户的用户名和邮箱设置 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ git config --system --unset user.name  L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ git config --system --unset user.email  # 查看系统级别的用户配置,可以看到没有系统用户的配置了。 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ git config --list --system diff.astextplain.textconv=astextplain filter.lfs.clean=git-lfs clean -- %f filter.lfs.smudge=git-lfs smudge -- %f filter.lfs.process=git-lfs filter-process filter.lfs.required=true http.sslbackend=openssl http.sslcainfo=F:/DevInstall/Git/GitforWindows/mingw64/ssl/certs/ca-bundle.crt core.autocrlf=true core.fscache=true core.symlinks=false credential.helper=manager</code></pre> <blockquote> <p>提示：全局用户同理，本地用户需要到仓库中执行命令，也是同理的。</p> </blockquote> <h2 id="3用户签名的优先级">3、用户签名的优先级</h2> <p>之前我们讲过执行<code>git config</code>命令有三个作用域，分别是<code>local、global、system</code>。</p> <p>接下来，要探讨的是，这三个配置作用域的优先级。</p> <p><strong>（1）先查看本机Git用户签名配置</strong></p> <pre><code class="language-shell"># 查看系统用户签名 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ git config --list --system diff.astextplain.textconv=astextplain filter.lfs.clean=git-lfs clean -- %f filter.lfs.smudge=git-lfs smudge -- %f filter.lfs.process=git-lfs filter-process filter.lfs.required=true http.sslbackend=openssl http.sslcainfo=F:/DevInstall/Git/GitforWindows/mingw64/ssl/certs/ca-bundle.crt core.autocrlf=true core.fscache=true core.symlinks=false credential.helper=manager user.name=tang_s user.email=tang_s@126.com  # 查看全局用户签名 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ git config --list --global user.name=sun_wk user.email=sun_wk@126.com  # 查看本地用户签名 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ git config --list --local core.repositoryformatversion=0 core.filemode=false core.bare=false core.logallrefupdates=true core.symlinks=false core.ignorecase=true user.name=sha_hs user.email=sha_hs@126.com</code></pre> <p>可以看到：</p> <ul> <li>系统用户签名：<code>tang_s</code></li> <li>全局用户签名：<code>sun_wk</code></li> <li>本地用户签名：<code>sha_hs</code></li> </ul> <p><strong>（2）创建一个文件，提交到本地版本库中。</strong></p> <p><strong>1）在仓库中创建一个文本。</strong></p> <pre><code class="language-bash">L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ touch test.java  L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ ll total 0 -rw-r--r-- 1 L 197121 0  4月  3 10:54 test.java</code></pre> <p><strong>2）提交这个文本到本地Git仓库中。</strong></p> <pre><code class="language-bash"># 1.查看工作目录和暂存区中文件的状态， # 发现工作区中有一个test.java未被git管理 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ git status On branch master  No commits yet  Untracked files:   (use "git add &lt;file&gt;..." to include in what will be committed)         test.java  nothing added to commit but untracked files present (use "git add" to track)  # 2.把test.java添加到暂存区，被git纳入管理 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ git add test.java  # 3.再次查看工作目录和暂存区中文件的状态， # 可以看到test.java文件被git管理 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ git status On branch master  No commits yet  Changes to be committed:   (use "git rm --cached &lt;file&gt;..." to unstage)         new file:   test.java  # 4.把test.java提交到本地版本库中 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ git commit -m 'add test.java' [master (root-commit) e85b3b2] add test.java  1 file changed, 0 insertions(+), 0 deletions(-)  create mode 100644 test.java</code></pre> <p>说明上边的一些列操作：这里简单解释一下，之后会详细说明。<br /> 使用Git的好处之一就是，如果出错了，它的提示信息是非常详细的，认真的耐心的看一看，就能够解决。</p> <ul> <li>执行<code>$ git status</code>命令：用于显示工作目录和暂存区中文件的状态。 <p>文件是红色的，意思是<code>test.java</code>文件还没有被Git管控，这个时候直接使用<code>git commit</code>命令是不能生效的。</li> <li>将文件加入Git的暂存区。<br /> 这时就要对新加入的文件执行<code>git add + 文件名</code>，让Git对该文件进行管控，在看一下Git的状态。</p> <p>绿色表示该文件已经被Git管理了，该文件已经在Git的暂存区当中了（<code>stage</code>）。</li> <li>此时便可以对test.java文件生成一个正式的<code>commit</code>了。<br /> 执行<code>$ git commit -m 'add Test_text'</code><br /><code>-m ：就是说你这此变更的理由或者原因是什么。</code></p> <p>提示<code>master</code>分支根部的<code>commit</code>已经创建出来了。</li> </ul> <p><strong>（3）查看Git日志。</strong></p> <p>执行<code>git log</code>命令，查看Git日志。</p> <pre><code class="language-bash">L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ git log commit e85b3b21a4b296acacf34bf9caeeaa75544a2f2b (HEAD -&gt; master) Author: sha_hs &lt;sha_hs@126.com&gt; Date:   Sat Apr 3 10:55:55 2021 +0800      add test.java</code></pre> <p><strong>我们可以看到，在<code>system</code>、<code>global</code>、<code>local</code>这三个用户签名都存在的情况下，是通过本地用户进行的提交，所以说明本地用户<code>sha_hs</code>的优先级最高。</strong></p> <blockquote> <p>提示：</p> <ul> <li>黄颜色的一串数字是本次<code>commit</code>的<code>id</code>号。</li> <li><code>Author</code>表示完成这一次提交的作者。</li> </ul> </blockquote> <p><strong>（4）配置文件级别的优先级总结。</strong></p> <ol> <li>就近原则：<br /> 项目（本地）级别优先于用户（全局）级别，用户级别优先于系统级别。<br /> 三者都有时采用项目级别的签名。</li> <li>如果只有用户级别的签名，就以用户级别的签名为准。</li> <li>三者都没有签名，不允许，无法提交变更到本地版本库。</li> </ol> <h2 id="4总结本文用到的git命令">4、总结本文用到的Git命令</h2> <table> <thead> <tr> <th>序号</th> <th>Git命令</th> <th>说明</th> </tr> </thead> <tbody> <tr> <td>1</td> <td><code>$ git status</code></td> <td>查看当前工作区和暂存区文件的状态</td> </tr> <tr> <td>2</td> <td><code>$ git add</code></td> <td>可以将跟踪到的更新放到暂存区（更新包括新增、修改、删除等操作）</td> </tr> <tr> <td>3</td> <td><code>$ git commit -m 'add Test_text'</code></td> <td>提交更新</td> </tr> <tr> <td>4</td> <td><code>$ git log</code></td> <td>查看提交历史</td> </tr> </tbody> </table> <blockquote> <p>注意：</p> <p>执行<code>git status</code>命令后，出现<code>“Changed but not updated”</code>t提示，说明已跟踪文件的内容发生了变化，但还没有放到暂存区。</p> </blockquote> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-102303.htm">vue使用el-tabs实现标签页（内存+vuex）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                	<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-8-node-share-links.htm" title="3月8日免费VPN订阅 | 2025年20M/S|Clash/V2ray/SSR/Shadowrocket免费节点链接地址">3月8日免费VPN订阅 | 2025年20M/S|Clash/V2ray/SSR/Shadowrocket免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-91243.htm" title="vue之prop与$emit的用法说明_vue.js_">vue之prop与$emit的用法说明_vue.js_</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-13-free-subscribe-node.htm" title="4月13日免费VPN订阅 | 2025年19.7M/S|Shadowrocket/SSR/Clash/V2ray免费节点链接地址">4月13日免费VPN订阅 | 2025年19.7M/S|Shadowrocket/SSR/Clash/V2ray免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-20-free-v2ray.htm" title="3月20日免费VPN订阅 | 2025年23M/S|Shadowrocket/V2ray/Clash/SSR免费节点链接地址">3月20日免费VPN订阅 | 2025年23M/S|Shadowrocket/V2ray/Clash/SSR免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-71653.htm" title="vscode配置基于maven的Javaweb开发">vscode配置基于maven的Javaweb开发</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-11-clash-v2ray-ss-ssr.htm" title="3月11日免费VPN订阅 | 2025年19.2M/S|Shadowrocket/Clash/V2ray/SSR免费节点链接地址">3月11日免费VPN订阅 | 2025年19.2M/S|Shadowrocket/Clash/V2ray/SSR免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-5-free-high-speed-nodes.htm" title="4月5日免费VPN订阅 | 2025年19.9M/S|Shadowrocket/V2ray/SSR/Clash免费节点链接地址">4月5日免费VPN订阅 | 2025年19.9M/S|Shadowrocket/V2ray/SSR/Clash免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-99367.htm" title="匿名类（Anonymous Classes）">匿名类（Anonymous Classes）</a></li>
+                        <li class="py-2"><a href="/news/article-79767.htm" title="大成路宠爱国际动物医院电话号码是多少（宠爱国际动物医院科怡路店电话）">大成路宠爱国际动物医院电话号码是多少（宠爱国际动物医院科怡路店电话）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-29-clash-v2ray-ss-ssr.htm" title="3月29日免费VPN订阅 | 2025年19.2M/S|Clash/Shadowrocket/V2ray/SSR免费节点链接地址">3月29日免费VPN订阅 | 2025年19.2M/S|Clash/Shadowrocket/V2ray/SSR免费节点链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">68</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">免费VPN节点机场订阅官网</a> 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+    <script src="/assets/website/js/frontend/androidclash/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.animateNumber.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/scrollax.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
