@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://mianfeivpn.github.io/news/article-105462.htm" />
+    <title>深入Vue3学习vue-router vuex</title>
+        <meta name="description" content="vue-router meta属性 meta属性，后续可以通过route.meta拿到里面的值。 router hooks   这两个就是在setup中拿到的，相当于this.$route this." />
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/website/img/androidclash/favicon.ico" type="image/x-icon"/>
+    
+    <meta name="author" content="免费VPN节点机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://mianfeivpn.github.io/news/article-105462.htm" />
+    <meta property="og:site_name" content="免费VPN节点机场订阅官网" />
+    <meta property="og:title" content="深入Vue3学习vue-router vuex" />
+    <meta property="og:image" content="https://mianfeivpn.github.io/uploads/20240305/0a97bd4c2545df0d8fc2b2a4eeba6279.webp" />
+        <meta property="og:release_date" content="2025-04-27T08:28:27" />
+    <meta property="og:updated_time" content="2025-04-27T08:28:27" />
+        <meta property="og:description" content="vue-router meta属性 meta属性，后续可以通过route.meta拿到里面的值。 router hooks   这两个就是在setup中拿到的，相当于this.$route this." />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="深入Vue3学习vue-router vuex">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/animate.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/flaticon.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DCKB1K87CW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DCKB1K87CW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+                        <a class="navbar-brand" href="/">免费VPN<span></span></a>
+            
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> MENU
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                	                    <li class="nav-item"><a href="/" class="nav-link"><span>首页</span></a></li>
+                                        <li class="nav-item"><a href="/free-nodes/" class="nav-link"><span>免费节点</span></a></li>
+                                        <li class="nav-item"><a href="/paid-subscribe/" class="nav-link"><span>推荐机场</span></a></li>
+                                        <li class="nav-item"><a href="/client.htm" class="nav-link"><span>客户端</span></a></li>
+                                        <li class="nav-item"><a href="/news/" class="nav-link"><span>新闻资讯</span></a></li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="hero-wrap" style="height:350px;overflow: hidden;">
+        <div class="overlay"></div>
+        <div class="container-fluid px-0">
+            <div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
+                <img class="one-third js-fullheight align-self-end order-md-last img-fluid" src="/assets/website/img/androidclash/undraw_book_lover_mkck.svg" alt="" style="opacity: 0.5;">
+                <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
+                    <div class="text" style="top: 30%;min-width: 70%;">
+                        <h1>深入Vue3学习vue-router vuex</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-about img ftco-section" id="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                	                <input type="hidden" id="share-website-info" data-name="V2ray X节点订阅官网" data-url="https://v2rayx.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2><a id="vuerouter_0" rel="nofollow"></a>vue-router</h2> <p>meta属性<img decoding="async" src="http://img.555519.xyz/uploads3/20220819/5f63879ac86aa8fa73b3f71a502dbce0.jpg" alt="深入Vue3学习vue-router vuex"><br /> meta属性，后续可以通过route.meta拿到里面的值。</p> <h2><a id="router_hooks_3" rel="nofollow"></a>router hooks</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/6f99e67a9ee19ef00aee481acd488a5c.jpg" alt="深入Vue3学习vue-router vuex"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/6043726e00691acf73dc7b1f4137fa15.jpg" alt="深入Vue3学习vue-router vuex"><br /> 这两个就是在setup中拿到的，相当于this.$route this. $router</p> <h2><a id="_8" rel="nofollow"></a>匹配未找到路由</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/0e7dcf9adf814a5da46748a86ddf9383.jpg" alt="深入Vue3学习vue-router vuex">当输入的路由在配置中没有的时候会匹配到这个component中。</p> <h2><a id="routerlinktag_10" rel="nofollow"></a>router-link的tag</h2> <p>vue2的router-link可以通过tag属性，决定router-link渲染成什么形式。<br /> 而vue3通过插槽：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/91d29379dced49bf7e50539f19deef89.jpg" alt="深入Vue3学习vue-router vuex"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/6a13e3a4de9ca59a4bca92dd92df5ee2.jpg" alt="深入Vue3学习vue-router vuex"><br /> 甚至可以放一个组件。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/9fc805ac53a19d5499ab3a5f400d8556.jpg" alt="深入Vue3学习vue-router vuex"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/9eec963697af731b9414aff7b9d90874.jpg" alt="深入Vue3学习vue-router vuex"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/f2db065aef43989c7a16ce370a6b492c.jpg" alt="深入Vue3学习vue-router vuex"></p> <h2><a id="routerviewhttpsimgblogcsdnimgcn8f8e6f615801490e8100476b214da675png_19" rel="nofollow"></a>router-view的作用域插槽<img decoding="async" src="http://img.555519.xyz/uploads3/20220819/eb61e092b09f36e7452030363b5ec361.jpg" alt="深入Vue3学习vue-router vuex"></h2> <h2><a id="_20" rel="nofollow"></a>动态添加路由（开发常用）</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/303ee2abbe923850ea69531161d91707.jpg" alt="深入Vue3学习vue-router vuex"><br /> 可以根据一些权限管控来动态添加路由<br /> 这样是添加顶级路由对象。<br /> 添加二级路由：<img decoding="async" src="http://img.555519.xyz/uploads3/20220819/b74a24ceb0d428ebdb6569afa590b54e.jpg" alt="深入Vue3学习vue-router vuex"><br /> 接受两个参数，<img decoding="async" src="http://img.555519.xyz/uploads3/20220819/3cd54f49c11e1dd37c72b8e09793dae0.jpg" alt="深入Vue3学习vue-router vuex"></p> <h2><a id="_26" rel="nofollow"></a>删除</h2> <p>1 添加一个相同Name的路由<br /> 2 通过removeRoute的方法，传入路由的名称<br /> 3 通过addRoue的返回值调用。<img decoding="async" src="http://img.555519.xyz/uploads3/20220819/b4844e37f0e0812a4114265a4b10d360.jpg" alt="深入Vue3学习vue-router vuex"></p> <h2><a id="_30" rel="nofollow"></a>路由导航守卫</h2> <h3><a id="boforeEach_31" rel="nofollow"></a>全局前置守卫boforeEach是在导航触发时调用的。</h3> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/d3bd8bfe9bbd39e44bbb5a31442d103b.jpg" alt="深入Vue3学习vue-router vuex"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/126817ce6c47cb4f1d19241319dfc263.jpg" alt="深入Vue3学习vue-router vuex"><br /> next在第四版已经不被推荐了。<br /> 现在通过返回值代替next了。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/97eb181029b9d983dc2daf1a4f314c4f.jpg" alt="深入Vue3学习vue-router vuex"></p> <h3><a id="_37" rel="nofollow"></a>其他导航守卫</h3> <p>组件内守为，路由独享守卫<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/7ef93e644a13d15d9d8caa398f45af10.jpg" alt="深入Vue3学习vue-router vuex"></p> <h3><a id="_41" rel="nofollow"></a>导航解析过程</h3> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/12b8a9ce75f81e46dfa5b6889c7196e4.jpg" alt="深入Vue3学习vue-router vuex"><br /> 可以看到，先调用失活组建的beforeRouteLeact，再调用全局的beforeEach…<br /> 注意的一点是，再beforeOruteEnter中时拿不到this的，所以通过最后组件创建完调用next的回调函数，将组件实例传进去。</p> </h1> <p>在setup中的使用<br /> useStrore hooks<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/2df5217cdc67525b59b644ebf79187b3.jpg" alt="深入Vue3学习vue-router vuex"><br /> 基本使用<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/67b915ee1fcf6238716889009131baab.jpg" alt="深入Vue3学习vue-router vuex"></p> <h2><a id="mapState_51" rel="nofollow"></a>mapState用法</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/6c739e860151f294a582694914f4f1ce.jpg" alt="深入Vue3学习vue-router vuex"><br /> 使用<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/13e0f746487af78e00365466cb3af8e1.jpg" alt="深入Vue3学习vue-router vuex"><br /> mapState返回的是一个函数，所以必须使用调用的方式使用他，然后传入store才能正常使用。<br /> 我们可以借助computed<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/7c1aa6eb4f9fd06bdc05397e731ff309.jpg" alt="深入Vue3学习vue-router vuex"><br /> 还是需要绑定store,借助computed,因为compunted就是传入一个函数的。然后将值解构出去即可。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/61ad51e658524e9f4ea832de45b91ab1.jpg" alt="深入Vue3学习vue-router vuex"><br /> 所以我们封装一下这个函数<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/a896ed360a9e32d30691c21d25b3dae2.jpg" alt="深入Vue3学习vue-router vuex"><br /> 使用的时候<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/ef728b8776f92a51d57d971a5963f57c.jpg" alt="深入Vue3学习vue-router vuex"></p> <p>封装useState<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/54af83daf6c4dc52831d35e6128de506.jpg" alt="深入Vue3学习vue-router vuex"></p> <h2><a id="getter_69" rel="nofollow"></a>getter</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/9994cf60c64fb785818d84919147c594.jpg" alt="深入Vue3学习vue-router vuex"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/04fd7f7b3facbfccc72195460f4c057f.jpg" alt="深入Vue3学习vue-router vuex"></p> <h2><a id="mapGetters_72" rel="nofollow"></a>mapGetters</h2> <p>用法与mapState差不多</p> <p>我们也跟着mapState一样封装一下<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/b555646ceb6486b5380efcb6c6cd05a4.jpg" alt="深入Vue3学习vue-router vuex"></p> <p>同样调用UseMapper即可。</p> <h2><a id="Mutations_79" rel="nofollow"></a>Mutations</h2> <p>基本使用<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/29cf753edf8e88854305b701d9dbac0a.jpg" alt="深入Vue3学习vue-router vuex"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/cf6265ff4097b3d25e39f414edc7495f.jpg" alt="深入Vue3学习vue-router vuex"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/d38024358166fca991505049e15c85cb.jpg" alt="深入Vue3学习vue-router vuex"><br /> 这里的setAbout不用绑定this，因为是在模板使用的，模板可以拿到this.$store<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/46478d9b4fa78038f215246757a28241.jpg" alt="深入Vue3学习vue-router vuex"><br /> 效果相当于<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/b2084e81b29124254b7576760188a16d.jpg" alt="深入Vue3学习vue-router vuex"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/976591a994a04954a5aff985b5223f92.jpg" alt="深入Vue3学习vue-router vuex"><br /> 因为setAbout是在about模块下的，所以前面要加模<br /> 块。<br /> 封装同下面actions一起讲</p> </h1> <p>vuex的actions一般是用来做异步操作的，比如网络操作，所以我们必须通过dispatch acitons再commit mutation去修改state，有点像redux的dispatch redux-thunk actons，然后再去dispatch普通的actions再去触发reducer修改state的值。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/c0354603052a5ed5fe5188f4d17a93cb.jpg" alt="深入Vue3学习vue-router vuex"><br /> 这是模块about中的acitons，里面的context表示当前模块的store。<br /> 可以看到acitons里面是直接Commit去触发mutation再去修改state的值。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/52f9c68292507621330b9d2ce007e59e.jpg" alt="深入Vue3学习vue-router vuex"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/662989183d98cb6116bf57f06035f74c.jpg" alt="深入Vue3学习vue-router vuex"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/4397da871bd219e50428c3fe9f1916db.jpg" alt="深入Vue3学习vue-router vuex"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/818c0f77b6e1eeb03183e5ade19eeaf9.jpg" alt="深入Vue3学习vue-router vuex"><br /> 效果相当于<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/f3365bb89fa9f1d1985ff80d83e2ff89.jpg" alt="深入Vue3学习vue-router vuex"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/ded4301b6660561e1e936912bb6567d9.jpg" alt="深入Vue3学习vue-router vuex"><br /> mutation是commit，acitons是dispatch</p> <h4><a id="mapActions_107" rel="nofollow"></a>封装mapActions</h4> <pre><code class="prism language-typescript"><span class="token keyword">import</span><span class="token punctuation">{<!-- --></span>   createNamespacedHelpers<span class="token punctuation">,</span>   mapActions<span class="token keyword">as</span> mapRootActions<span class="token punctuation">,</span>   ActionMethod<span class="token punctuation">,</span><span class="token punctuation">}</span><span class="token keyword">from</span><span class="token string">"vuex"</span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token punctuation">{<!-- --></span> useStore<span class="token punctuation">}</span><span class="token keyword">from</span><span class="token string">"@/store"</span><span class="token punctuation">;</span><span class="token keyword">const</span> useActions<span class="token operator">=</span><span class="token punctuation">(</span>args<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">type</span><span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{<!-- --></span><span class="token keyword">const</span> store<span class="token operator">=</span><span class="token function">useStore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'store'</span><span class="token punctuation">,</span> store<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">let</span> mapFun<span class="token operator">=</span> mapRootActions<span class="token punctuation">;</span><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">type</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">const</span><span class="token punctuation">{<!-- --></span> mapActions<span class="token punctuation">}</span><span class="token operator">=</span><span class="token function">createNamespacedHelpers</span><span class="token punctuation">(</span><span class="token keyword">type</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     mapFun<span class="token operator">=</span> mapActions<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token keyword">const</span> MapFuns<span class="token operator">=</span><span class="token function">mapFun</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">const</span> DealFuns<span class="token operator">:</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">[</span>k<span class="token keyword">in</span><span class="token keyword">typeof</span> args<span class="token punctuation">[</span><span class="token builtin">number</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">:</span> ActionMethod<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token punctuation">;</span>   Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>MapFuns<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{<!-- --></span>     DealFuns<span class="token punctuation">[</span>item<span class="token punctuation">]</span><span class="token operator">=</span> MapFuns<span class="token punctuation">[</span>item<span class="token keyword">as</span><span class="token keyword">keyof</span><span class="token keyword">typeof</span> MapFuns<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>       $store<span class="token operator">:</span> store<span class="token punctuation">,</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">return</span> DealFuns<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token keyword">export</span><span class="token punctuation">{<!-- --></span> useActions<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre> <h3><a id="mapState_mapGetters_mapActions_mapMutation_145" rel="nofollow"></a>mapState mapGetters mapActions mapMutation</h3> <p>都可以接受一个对象，比如<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/ed48750d8c1e32f7c0302c29d7d2436f.jpg" alt="深入Vue3学习vue-router vuex"><br /> 用键值对代替数组，效果是一样的，</p> <h2><a id="module_149" rel="nofollow"></a>module的相对使用</h2> <p>当我们项目日益庞大的时候，一个state明显不够用，所以才有了模块的诞生。每个模块对应一个子store，他也有自己的state,actions,getter…<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/4177ecd697a3a2908eab1e3b70631077.jpg" alt="深入Vue3学习vue-router vuex"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/3cc3ed8c765aed5126e03090527fa007.jpg" alt="深入Vue3学习vue-router vuex"></p> <p>about就是一个模块，获取的时候其实也算是根state的一个属性，比如上面的about<br /> 只需要通过store.state.about就可以获取about这个store。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/d913ec9bec250d0d8448eded7df4d018.jpg" alt="深入Vue3学习vue-router vuex"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/5eb5d8f1a5aec41ed272b07d295525c3.jpg" alt="深入Vue3学习vue-router vuex"></p> <h3><a id="_158" rel="nofollow"></a>模块注意点</h3> <h3><a id="_storestoreMutationactionsdispatchcommmitstorestore_159" rel="nofollow"></a>一 如果根store和一个模块store有一样命名的Mutation或者actions，一旦dispatch或者commmit，都会触发根store与模块store的改变。</h3> <p>如何解决呢？在命名空间的namespace属性设为true。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/b23947ee234119ae0e3f2e296d721bb5.jpg" alt="深入Vue3学习vue-router vuex"><br /> 然后在commitd的时候，<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/9b16c6a7f651850084149e5dc985ab17.jpg" alt="深入Vue3学习vue-router vuex"><br /> 在前面加上模块，当然也可以<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/eb53bfbcd245c0e18f32f04e4a86e09b.jpg" alt="深入Vue3学习vue-router vuex"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/5b9923cb222e3ca3a251ec4cf3fc0c0a.jpg" alt="深入Vue3学习vue-router vuex"><br /> 通过这样的方式拿到模块的actions或者mutations。<br /> 而如果想在模块的acitons中commit根的mutation呢？<br /> commit(‘xx’, null, {root: true})只需要加第三个属性表示commit的mutation为root的。</p> <h3><a id="_getterstorestateaboutgettersstoregettersxxxgettersnamespacetrue_170" rel="nofollow"></a>二 模块的getter不能通过store.state.about.getters来获取。而是直接通过store.getters.xxx来获取，因为getters被合并到一起了。而开启namespace为true的情况下只能通过</h3> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/ae88814bf404c59364a15f123875a288.jpg" alt="深入Vue3学习vue-router vuex"><br /> 再前面加上具体的模块才能获取。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/8ea247b0becfac1d44962f10e0dc3722.jpg" alt="深入Vue3学习vue-router vuex"><br /> 也可以通过这种<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/8f039508b8c9d9faf461dd1bdcb747ae.jpg" alt="深入Vue3学习vue-router vuex"><br /> 只要是使用我们封装的useGetters即可。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/8caa44813e78a0c7c1444eb465889de2.jpg" alt="深入Vue3学习vue-router vuex"><br /> 可以看到getters和actions是有rootgetters和rootState这两个属性拿到全局的东西。</p> <h3><a id="moduel_179" rel="nofollow"></a>moduel的辅助函数</h3> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/97aca36b45b19d97bf00597164bfc0c6.jpg" alt="深入Vue3学习vue-router vuex"></p> <p>mapState mapMutation mapGetters mapActions都是辅助函数<br /> 而模块的写法除了，</p> <h4><a id="_184" rel="nofollow"></a>一</h4> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/89534c13d970868b7ab28a0b1bf2d91e.jpg" alt="深入Vue3学习vue-router vuex"><br /> 还有通过对象</p> <h4><a id="_187" rel="nofollow"></a>二</h4> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220819/ed51c043f87bd2b643d3a92419b8bdea.jpg" alt="深入Vue3学习vue-router vuex"><br /> 但是没有 MapState([xx/xx])这种写法。<br /> 也可以通过createNamespaceHelpers来帮助。</p> <h4><a id="httpsimgblogcsdnimgcn62a0fc7fc2df41b7b64f485ece8e0f34pngxossprocessimagewatermarktype_ZmFuZ3poZW5naGVpdGkshadow_10text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpbl9maWdodGlusize_16color_FFFFFFt_70_191" rel="nofollow"></a>三<img decoding="async" src="http://img.555519.xyz/uploads3/20220819/a35806215ee084d46e0490dceaa79a7e.jpg" alt="深入Vue3学习vue-router vuex"></h4> <p>这些就是模块的辅助函数。帮助你直接获取哪些模块的mapXxxx方法。</p> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-104741.htm">瑞鹏宠物医院收费价目表最新版查询（瑞鹏宠物医院收费价目表最新版查询结果）</a></p>
+                                        <p>下一个：<a href="/news/article-105463.htm">猫三联加狂犬疫苗一共几针,多少钱一针（猫三联和狂犬疫苗间隔多久打一次）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                	<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-73643.htm" title="24小时宠物医院附近（24小时宠物医院附近上海）">24小时宠物医院附近（24小时宠物医院附近上海）</a></li>
+                        <li class="py-2"><a href="/news/article-103121.htm" title="北京农大动物医院好么啊（北京农大动物医院公众号）">北京农大动物医院好么啊（北京农大动物医院公众号）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-25-free-node-subscribe.htm" title="4月25日免费VPN订阅 | 2025年21.2M/S|Clash/SSR/V2ray/Shadowrocket免费节点链接地址">4月25日免费VPN订阅 | 2025年21.2M/S|Clash/SSR/V2ray/Shadowrocket免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-20-clash-v2ray-ss-ssr.htm" title="4月20日免费VPN订阅 | 2025年19.4M/S|V2ray/Shadowrocket/SSR/Clash免费节点链接地址">4月20日免费VPN订阅 | 2025年19.4M/S|V2ray/Shadowrocket/SSR/Clash免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-103864.htm" title="kafka_2.13-3.0.0 Quick Start启动">kafka_2.13-3.0.0 Quick Start启动</a></li>
+                        <li class="py-2"><a href="/news/article-100139.htm" title="广州宠物领养中心电话号码 广州宠物领养中心电话号码多少">广州宠物领养中心电话号码 广州宠物领养中心电话号码多少</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-28-free-node-subscribe-links.htm" title="3月28日免费VPN订阅 | 2025年20.5M/S|V2ray/Shadowrocket/SSR/Clash免费节点链接地址">3月28日免费VPN订阅 | 2025年20.5M/S|V2ray/Shadowrocket/SSR/Clash免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-67730.htm" title="被野猫抓了一下轻微破皮出了一点点血（被野猫抓了一下轻微破皮怎么办）">被野猫抓了一下轻微破皮出了一点点血（被野猫抓了一下轻微破皮怎么办）</a></li>
+                        <li class="py-2"><a href="/news/article-100140.htm" title="动物疫苗的使用方法及注意事项有哪些呢视频讲解（动物疫苗注射注意事项）">动物疫苗的使用方法及注意事项有哪些呢视频讲解（动物疫苗注射注意事项）</a></li>
+                        <li class="py-2"><a href="/news/article-65841.htm" title="动物免疫接种的意义 动物免疫接种的意义是什么">动物免疫接种的意义 动物免疫接种的意义是什么</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">79</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">免费VPN节点机场订阅官网</a> 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+    <script src="/assets/website/js/frontend/androidclash/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.animateNumber.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/scrollax.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
