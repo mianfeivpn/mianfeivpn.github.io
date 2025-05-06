@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://mianfeivpn.github.io/news/article-111436.htm" />
+    <title>树莓派ASP.NET环境配置</title>
+        <meta name="description" content="在树莓派上部署ASP.NET环境（树莓派做ASP.NET项目服务器），之后Windows上开发的ASP.NET项目可以部署在树莓派上。配置过程如下： 前言：本篇文章内容是根据mono官网上查阅的配置教" />
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/website/img/androidclash/favicon.ico" type="image/x-icon"/>
+    
+    <meta name="author" content="免费VPN节点机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://mianfeivpn.github.io/news/article-111436.htm" />
+    <meta property="og:site_name" content="免费VPN节点机场订阅官网" />
+    <meta property="og:title" content="树莓派ASP.NET环境配置" />
+    <meta property="og:image" content="https://mianfeivpn.github.io/uploads/20240305/76f70019f3a887a61142ccbd406a47ab.webp" />
+        <meta property="og:release_date" content="2025-05-04T09:28:22" />
+    <meta property="og:updated_time" content="2025-05-04T09:28:22" />
+        <meta property="og:description" content="在树莓派上部署ASP.NET环境（树莓派做ASP.NET项目服务器），之后Windows上开发的ASP.NET项目可以部署在树莓派上。配置过程如下： 前言：本篇文章内容是根据mono官网上查阅的配置教" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="树莓派ASP.NET环境配置">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/animate.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/flaticon.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DCKB1K87CW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DCKB1K87CW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+                        <a class="navbar-brand" href="/">免费VPN<span></span></a>
+            
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> MENU
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                	                    <li class="nav-item"><a href="/" class="nav-link"><span>首页</span></a></li>
+                                        <li class="nav-item"><a href="/free-nodes/" class="nav-link"><span>免费节点</span></a></li>
+                                        <li class="nav-item"><a href="/paid-subscribe/" class="nav-link"><span>推荐机场</span></a></li>
+                                        <li class="nav-item"><a href="/client.htm" class="nav-link"><span>客户端</span></a></li>
+                                        <li class="nav-item"><a href="/news/" class="nav-link"><span>新闻资讯</span></a></li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="hero-wrap" style="height:350px;overflow: hidden;">
+        <div class="overlay"></div>
+        <div class="container-fluid px-0">
+            <div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
+                <img class="one-third js-fullheight align-self-end order-md-last img-fluid" src="/assets/website/img/androidclash/undraw_book_lover_mkck.svg" alt="" style="opacity: 0.5;">
+                <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
+                    <div class="text" style="top: 30%;min-width: 70%;">
+                        <h1>树莓派ASP.NET环境配置</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-about img ftco-section" id="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                	                <input type="hidden" id="share-website-info" data-name="V2ray X节点订阅官网" data-url="https://v2rayx.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<h2>在树莓派上部署ASP.NET环境（树莓派做ASP.NET项目服务器），之后Windows上开发的ASP.NET项目可以部署在树莓派上。配置过程如下：</h2> <p>前言：本篇文章内容是根据mono官网上查阅的配置教程所写，当时做期末课设的时候一边查翻译一边配置（好像当时访问这个网站还要禾斗学上网），最终亲身试验可以用，随后在word上做了配置过程笔记，现在搬上来。</p> <p>　　mono教程官网网址：https://www.mono-project.com/download/preview/#download-lin-raspbian</p> <p><span style="font-size: 18px">　　1.&nbsp;安装Mono。Mono是Xamarin公司开发的一个跨平台.NET运行环境。安装Mono是必不可少的一个关键步骤。</span></p> <p><span style="font-size: 18px">　　2. 在安装前，先查看下树莓派系统的版本</span></p> <div class="cnblogs_code"> <pre><span style="font-size: 18px">lsb_release  -a</span></pre> </div> <p><span style="font-size: 18px">　　3. 记住红框中的这个版本号</span></p> <p><span style="font-size: 18px"><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/478fff098b6624a4556d9e903da55744.jpg" alt="树莓派ASP.NET环境配置"></span></p> <p><span style="font-size: 18px">　　4.&nbsp;将Mono存储库添加到系统（看你系统版本，选一个安装）注意：这些软件包应该在较新的Raspbian版本上工作，仅测试以下列出的版本。</span></p> <p><span style="font-size: 18px">　　Raspbian 10：</span></p> <div class="cnblogs_code"> <pre><span style="font-size: 18px">sudo apt install apt-transport-https dirmngr gnupg ca-<span style="color: rgba(0, 0, 0, 1)">certificates sudo apt</span>-key adv --keyserver hkp:<span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF</span><span style="color: rgba(0, 0, 0, 1)"> echo</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">deb https://download.mono-project.com/repo/debian stable-raspbianbuster main</span><span style="color: rgba(128, 0, 0, 1)">"</span> | sudo tee /etc/apt/sources.list.d/mono-official-<span style="color: rgba(0, 0, 0, 1)">stable.list sudo apt update</span></span></pre> </div> <p><span style="font-size: 18px">　　Raspbian 9：</span></p> <div class="cnblogs_code"> <pre><span style="font-size: 18px">sudo apt install apt-transport-https dirmngr gnupg ca-<span style="color: rgba(0, 0, 0, 1)">certificates sudo apt</span>-key adv --keyserver hkp:<span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF</span> echo<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">deb https://download.mono-project.com/repo/debian stable-raspbianstretch main</span><span style="color: rgba(128, 0, 0, 1)">"</span> | sudo tee /etc/apt/sources.list.d/mono-official-<span style="color: rgba(0, 0, 0, 1)">stable.list sudo apt update</span></span></pre> </div> <p><span style="font-size: 18px">　　5.&nbsp;安装单声道（mono）</span></p> <p><span style="font-size: 18px">　　　　1）安装软件包mono-devel来编译代码。</span></p> <div class="cnblogs_code"> <pre><span style="font-size: 18px">sudo apt install mono-devel</span></pre> </div> <p><span style="font-size: 18px">　　　　2）安装mono-complete软件包才能安装所有内容-这应涵盖大多数“找不到组件”错误的情况。</span></p> <div class="cnblogs_code"> <pre><span style="font-size: 18px">sudo apt install mono-complete</span></pre> </div> <p><span style="font-size: 18px">　　　　3）安装软件包mono-dbg以获得框架库的调试符号-允许您获取堆栈跟踪中的行号。</span></p> <div class="cnblogs_code"> <pre><span style="font-size: 18px">sudo apt install mono-dbg</span></pre> </div> <p><span style="font-size: 18px">　　　　4）安装软件包referenceassemblies-pcl以获得PCL编译支持-这将解决软件编译过程中大多数“未安装框架：.NETPortable”错误的情况。</span></p> <div class="cnblogs_code"> <pre><span style="font-size: 18px">sudo apt install referenceassemblies-pcl</span></pre> </div> <p><span style="font-size: 18px">　　　　5）安装软件包ca-certificates-mono以获得HTTPS连接的SSL证书。如果在建立HTTPS连接时遇到麻烦，请安装此软件包。</span></p> <div class="cnblogs_code"> <pre><span style="font-size: 18px">sudo apt install ca-certificates-mono</span></pre> </div> <p><span style="font-size: 18px">　　　　6）安装软件包mono-xsp4来运行ASP.NET应用程序。</span></p> <div class="cnblogs_code"> <pre><span style="font-size: 18px">sudo apt install mono-xsp4</span></pre> </div> <p><span style="font-size: 18px">　　笔记：默认情况下，3.12之前的Linux上的Mono不信任任何SSL证书，因此在访问HTTPS资源时会出错。不再需要此功能，因为3.12及更高版本包含一个新工具，该工具可在软件包安装时运行，并将Mono的证书存储与系统证书存储同步（在较旧的版本上，您必须通过运行导入Mozilla的受信任证书列表<span style="background-color: rgba(255, 204, 0, 1)">mozroots --import --sync</span>）。某些系统的配置方式使得在安装Mono时不会引入必要的软件包，在这种情况下，请确保<span style="background-color: rgba(255, 204, 0, 1)"><code>ca-certificates-mono</code></span>已安装软件包。</span></p> <p><span style="font-size: 18px">　　6.&nbsp;验证安装。安装Mono之后，最好需要运行一个快速的Hello World程序以确保正确设置了所有程序。这样，在尝试编写或运行更复杂的应用程序时，您知道Mono是正常的。</span></p> <p><span style="font-size: 18px">　　　　1）控制台Hello World</span></p> <p><span style="font-size: 18px">　　　　要测试基本功能是否可用，请将以下代码复制到名为hello.cs的文件中。没有这个文件就在你喜欢的位置新建个。</span></p> <div class="cnblogs_code"> <pre><span style="font-size: 18px"><span style="color: rgba(0, 0, 255, 1)">using</span><span style="color: rgba(0, 0, 0, 1)"> System;</span><span style="color: rgba(0, 0, 255, 1)">public</span><span style="color: rgba(0, 0, 255, 1)">class</span><span style="color: rgba(0, 0, 0, 1)"> HelloWorld {</span><span style="color: rgba(0, 0, 255, 1)">public</span><span style="color: rgba(0, 0, 255, 1)">static</span><span style="color: rgba(0, 0, 255, 1)">void</span> Main(<span style="color: rgba(0, 0, 255, 1)">string</span><span style="color: rgba(0, 0, 0, 1)">[] args)     {         Console.WriteLine (</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">Hello Mono World</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">);     } }</span></span></pre> </div> <p><span style="font-size: 18px">　　　　使用csc命令编译：</span></p> <div class="cnblogs_code"> <pre><span style="font-size: 18px">csc hello.cs</span></pre> </div> <p><span style="font-size: 18px">　　　　注意：csc编译器并非在所有平台上或在非常旧的Mono版本中都可用，在这种情况下，请改用mcs。</span></p> <p><span style="font-size: 18px">　　　　编译之后，编译器将创建“ hello.exe”，您可以使用以下命令运行它：</span></p> <div class="cnblogs_code"> <pre><span style="font-size: 18px">mono hello.exe</span></pre> </div> <p><span style="font-size: 18px">　　　　该程序应运行并输出：Hello Mono World</span></p> <p><span style="font-size: 18px">　　　　2）HTTPS连接。</span></p> <p><span style="font-size: 18px">　　　　为了确保HTTPS连接正常运行，请运行以下命令以检查是否可以连接到baidu.com</span></p> <div class="cnblogs_code"> <pre><span style="font-size: 18px">csharp -e<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">new System.Net.WebClient ().DownloadString ("https://www.baidu.com")</span><span style="color: rgba(128, 0, 0, 1)">'</span></span></pre> </div> <p><span style="font-size: 18px">　　　　如果一切正常，该程序将打印网站的html代码，否则将抛出异常。</span></p> <p><span style="font-size: 18px"></span></p> <p><span style="font-size: 18px">　　　　3）WinForm's Hello World</span></p> <p><span style="font-size: 18px">　　　　以下程序测试编写System.Windows.Forms应用程序</span></p> <div class="cnblogs_code"> <pre><span style="font-size: 18px"><span style="color: rgba(0, 0, 255, 1)">using</span><span style="color: rgba(0, 0, 0, 1)"> System;</span><span style="color: rgba(0, 0, 255, 1)">using</span><span style="color: rgba(0, 0, 0, 1)"> System.Windows.Forms;</span><span style="color: rgba(0, 0, 255, 1)">public</span><span style="color: rgba(0, 0, 255, 1)">class</span><span style="color: rgba(0, 0, 0, 1)"> HelloWorld : Form {</span><span style="color: rgba(0, 0, 255, 1)">static</span><span style="color: rgba(0, 0, 255, 1)">public</span><span style="color: rgba(0, 0, 255, 1)">void</span><span style="color: rgba(0, 0, 0, 1)"> Main ()     {         Application.Run (</span><span style="color: rgba(0, 0, 255, 1)">new</span><span style="color: rgba(0, 0, 0, 1)"> HelloWorld ());     }</span><span style="color: rgba(0, 0, 255, 1)">public</span><span style="color: rgba(0, 0, 0, 1)"> HelloWorld ()     {         Text</span>=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">Hello Mono World</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">;     } }</span></span></pre> </div> <p><span style="font-size: 18px">　　　　要进行编译，请使用带有-r选项的csc来告诉编译器提取WinForms库：</span></p> <div class="cnblogs_code"> <pre><span style="font-size: 18px">csc hello.cs -r:System.Windows.Forms.dll</span></pre> </div> <p><span style="font-size: 18px">　　　　编译器将创建“ hello.exe”，您可以使用以下命令运行它：</span></p> <div class="cnblogs_code"> <pre><span style="font-size: 18px">mono hello.exe</span></pre> </div> <p><span style="font-size: 18px"></span></p> <p><span style="font-size: 18px">　　　　4）ASP.NET Hello World</span></p> <p><span style="font-size: 18px">　　　　创建一个名称为WebForm1.aspx的文本文件并添加内容：</span></p> <div class="cnblogs_code"> <pre><span style="font-size: 18px">&lt;%@ Page Language=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">C#</span><span style="color: rgba(128, 0, 0, 1)">"</span> AutoEventWireup=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">true</span><span style="color: rgba(128, 0, 0, 1)">"</span>%&gt;  &lt;!DOCTYPE html&gt;  &lt;html xmlns=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">http://www.w3.org/1999/xhtml</span><span style="color: rgba(128, 0, 0, 1)">"</span>&gt; &lt;head&gt; &lt;meta http-equiv=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">Content-Type</span><span style="color: rgba(128, 0, 0, 1)">"</span> content=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">text/html; charset=utf-8</span><span style="color: rgba(128, 0, 0, 1)">"</span>/&gt;     &lt;title&gt;Sample Calendar&lt;/title&gt; &lt;/head&gt; &lt;body&gt;     &lt;form id=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">form1</span><span style="color: rgba(128, 0, 0, 1)">"</span> runat=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">server</span><span style="color: rgba(128, 0, 0, 1)">"</span>&gt;         &lt;div&gt;             &lt;asp:calendar showtitle=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">true</span><span style="color: rgba(128, 0, 0, 1)">"</span> runat=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">server</span><span style="color: rgba(128, 0, 0, 1)">"</span>&gt;&lt;/asp:calendar&gt;         &lt;/div&gt;     &lt;/form&gt; &lt;/body&gt; &lt;/html&gt;</span></pre> </div> <p><span style="font-size: 18px">　　　　然后从该文件目录运行xsp4命令：（先cd打开文件目录）</span></p> <div class="cnblogs_code"> <pre><span style="font-size: 18px">xsp4 --port<span style="color: rgba(128, 0, 128, 1)">9000</span></span></pre> </div> <p><span style="font-size: 18px"></span></p> <p><span style="font-size: 18px">　　　　5）Gtk＃Hello World</span></p> <p><span style="font-size: 18px">　　　　以下程序测试编写Gtk＃应用程序。</span></p> <div class="cnblogs_code"> <pre><span style="font-size: 18px"><span style="color: rgba(0, 0, 255, 1)">using</span><span style="color: rgba(0, 0, 0, 1)"> Gtk;</span><span style="color: rgba(0, 0, 255, 1)">using</span><span style="color: rgba(0, 0, 0, 1)"> System;</span><span style="color: rgba(0, 0, 255, 1)">class</span><span style="color: rgba(0, 0, 0, 1)"> Hello {</span><span style="color: rgba(0, 0, 255, 1)">static</span><span style="color: rgba(0, 0, 255, 1)">void</span><span style="color: rgba(0, 0, 0, 1)"> Main ()     {         Application.Init ();          Window window</span>=<span style="color: rgba(0, 0, 255, 1)">new</span> Window (<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">Hello Mono World</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">);         window.Show ();          Application.Run ();     } }</span></span></pre> </div> <p><span style="font-size: 18px">　　　　要进行编译，请使用带有-pkg选项的mcs来告诉编译器引入Gtk＃库（请注意，必须在系统上安装Gtk＃才能起作用）：</span></p> <div class="cnblogs_code"> <pre><span style="font-size: 18px">mcs hello.cs -pkg:gtk-sharp-<span style="color: rgba(128, 0, 128, 1)">2.0</span></span></pre> </div> <p><span style="font-size: 18px">　　　　编译器将创建“ hello.exe”，您可以使用以下命令运行它：</span></p> <div class="cnblogs_code"> <pre><span style="font-size: 18px">mono hello.exe</span></pre> </div> <p><span style="font-size: 18px"></span></p> <p><span style="font-size: 18px">　　7.&nbsp;查看Mono版本信息</span></p> <div class="cnblogs_code"> <pre><span style="font-size: 18px">mono -V</span></pre> </div> <p><span style="font-size: 18px">　　8.&nbsp;安装libgdiplus</span></p> <p><span style="font-size: 18px">　　Libgdiplus是一个Mono单声道库，用于对非Windows操作系统提供GDI+兼容的API。libgdiplus是mono中的System.Drawing依赖的一个组件，用于显示web页面基本颜色等。</span></p> <p><span style="font-size: 18px">　　后面发现，装Mono时，libgdiplus就被默认安装了，要想手动安装可运行下面的命令试试</span></p> <div class="cnblogs_code"> <pre><span style="font-size: 18px">sudo apt install libgdiplus</span></pre> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-110598.htm">怎样养猫家里才干净不臭（养猫女孩颅内有大量寄生虫）</a></p>
+                                        <p>下一个：<a href="/news/article-111437.htm">宠物医院营业执照办理流程（宠物医院营业执照办理流程图）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                	<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-88272.htm" title="Android 4.0.1破坏了WebView HTML 5本地存储？">Android 4.0.1破坏了WebView HTML 5本地存储？</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-10-free-node-subscribe-links.htm" title="4月10日免费VPN订阅 | 2025年19.3M/S|SSR/Clash/V2ray/Shadowrocket免费节点链接地址">4月10日免费VPN订阅 | 2025年19.3M/S|SSR/Clash/V2ray/Shadowrocket免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-86828.htm" title="猫咪领养协议免费模板下载大全（猫咪领养协议怎么写）">猫咪领养协议免费模板下载大全（猫咪领养协议怎么写）</a></li>
+                        <li class="py-2"><a href="/news/article-99367.htm" title="匿名类（Anonymous Classes）">匿名类（Anonymous Classes）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-18-clash-v2ray-ss-ssr.htm" title="4月18日免费VPN订阅 | 2025年21.7M/S|SSR/V2ray/Shadowrocket/Clash免费节点链接地址">4月18日免费VPN订阅 | 2025年21.7M/S|SSR/V2ray/Shadowrocket/Clash免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-93422.htm" title="成都宠物领养平台领养可靠吗现在怎么样（成都宠物领养网免费）">成都宠物领养平台领养可靠吗现在怎么样（成都宠物领养网免费）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-8-node-share-links.htm" title="4月8日免费VPN订阅 | 2025年22.5M/S|Clash/V2ray/Shadowrocket/SSR免费节点链接地址">4月8日免费VPN订阅 | 2025年22.5M/S|Clash/V2ray/Shadowrocket/SSR免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-96427.htm" title="epc（epc灯亮是什么故障）">epc（epc灯亮是什么故障）</a></li>
+                        <li class="py-2"><a href="/news/article-101509.htm" title="领养狗须知（领养狗需要什么条件和手续）">领养狗须知（领养狗需要什么条件和手续）</a></li>
+                        <li class="py-2"><a href="/news/article-105462.htm" title="深入Vue3学习vue-router vuex">深入Vue3学习vue-router vuex</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">14</span> <a href="/date/2025-05/" title="2025-05 归档">2025-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">88</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">免费VPN节点机场订阅官网</a> 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+    <script src="/assets/website/js/frontend/androidclash/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.animateNumber.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/scrollax.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
