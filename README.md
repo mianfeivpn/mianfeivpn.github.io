@@ -1,4 +1,4 @@
-# 11月20日免费VPN订阅 | 2025年19.4M/S|Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点免费节点链接地址  更新时间 2025-11-20 08:29:19
+# 11月29日免费VPN订阅 | 2025年20.6M/S|Shadowrocket节点/SSR节点/Singbox节点/Clash节点/V2ray节点免费节点链接地址  更新时间 2025-11-29 09:05:03
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://mianfeivpn.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://mianfeivpn.github.io/uploads/2025/11/0-20251120.yaml
-- https://mianfeivpn.github.io/uploads/2025/11/1-20251120.yaml
-- https://mianfeivpn.github.io/uploads/2025/11/2-20251120.yaml
-- https://mianfeivpn.github.io/uploads/2025/11/3-20251120.yaml
-- https://mianfeivpn.github.io/uploads/2025/11/4-20251120.yaml
+- https://mianfeivpn.github.io/uploads/2025/11/0-20251129.yaml
+- https://mianfeivpn.github.io/uploads/2025/11/1-20251129.yaml
+- https://mianfeivpn.github.io/uploads/2025/11/2-20251129.yaml
+- https://mianfeivpn.github.io/uploads/2025/11/3-20251129.yaml
+- https://mianfeivpn.github.io/uploads/2025/11/4-20251129.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://mianfeivpn.github.io/uploads/2025/11/0-20251120.txt
-- https://mianfeivpn.github.io/uploads/2025/11/1-20251120.txt
-- https://mianfeivpn.github.io/uploads/2025/11/2-20251120.txt
-- https://mianfeivpn.github.io/uploads/2025/11/3-20251120.txt
-- https://mianfeivpn.github.io/uploads/2025/11/4-20251120.txt
+- https://mianfeivpn.github.io/uploads/2025/11/0-20251129.txt
+- https://mianfeivpn.github.io/uploads/2025/11/1-20251129.txt
+- https://mianfeivpn.github.io/uploads/2025/11/2-20251129.txt
+- https://mianfeivpn.github.io/uploads/2025/11/3-20251129.txt
+- https://mianfeivpn.github.io/uploads/2025/11/4-20251129.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://mianfeivpn.github.io/uploads/2025/11/20251120.json
+- https://mianfeivpn.github.io/uploads/2025/11/20251129.json
 
 ## 更多Clash节点订阅 ：
 
