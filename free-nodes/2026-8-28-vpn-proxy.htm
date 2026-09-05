@@ -253,34 +253,9 @@ shadowrocket允许用户自定义DNS服务器，如使用Google DNS、Cloudflare
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 是什么？它与 Shadowsocks 有何不同？</h5></div>
-    <div class="panel-body">
-        SSR（ShadowsocksR）是 Shadowsocks 的增强版本，增加了多种混淆与加密方式，提高了抗封锁能力。与原版相比，SSR 的兼容性更强，但目前已停止维护，许多用户正逐渐迁移到更先进的 V2Ray 或 Trojan 协议上。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 的混淆方式如何选择最合适？</h5></div>
-    <div class="panel-body">
-        根据网络环境选择适合的混淆方式，如 tls1.2_ticket_auth 模拟 HTTPS 流量，可隐藏真实特征。结合协议插件使用，可以提高抗封锁能力和节点可用性。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Netch 的 TAP 模式与 TUN 模式区别是什么？</h5></div>
     <div class="panel-body">
         TAP 模式模拟以太网接口，适合游戏流量代理；TUN 模式则模拟 IP 层接口，更适合全局代理。根据用途不同可自由选择，但需管理员权限运行。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 是否比 Clash 更省资源？</h5></div>
-    <div class="panel-body">
-        Sing-box 在性能优化上比 Clash 更出色。它采用 Go 语言重构核心模块，并对并发模型进行了优化，内存占用更低，启动速度更快，适合低配置设备或嵌入式环境。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何使用 Clash 配置订阅链接？</h5></div>
-    <div class="panel-body">
-        在 Clash 中添加订阅链接时，用户需复制提供的 URL 并在客户端的配置界面中粘贴。Clash 会自动下载并更新配置文件。通过订阅，用户可以一键更新节点信息，无需手动导入，适合长期维护多个节点来源的用户。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess 协议的核心优势是什么？</h5></div>
-    <div class="panel-body">
-        VMess 是 V2Ray 项目的核心协议，支持加密、认证和多路复用功能。它能有效防止中间人攻击和流量识别，具有较高的安全性和灵活性，是目前科学上网中最常见的加密协议之一。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Matsuri 如何结合 Xray 内核实现多协议支持？</h5></div>
@@ -288,9 +263,9 @@ shadowrocket允许用户自定义DNS服务器，如使用Google DNS、Cloudflare
         Matsuri 可加载 Xray 核心，通过配置多 inbound/outbound 模块实现 VMess、VLess、Trojan 等协议共存。用户可在单一服务端配置文件中同时支持多客户端访问，便于统一管理。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Hysteria2 的多路复用如何提高传输效率？</h5></div>
+    <div class="panel-heading"><h5>Sing-box 是否比 Clash 更省资源？</h5></div>
     <div class="panel-body">
-        Hysteria2 利用 QUIC 的多路复用功能，将多个请求共享单个 UDP 连接，减少握手次数和延迟，提升整体吞吐量。尤其在高并发场景中效果显著。<hr />    </div>
+        Sing-box 在性能优化上比 Clash 更出色。它采用 Go 语言重构核心模块，并对并发模型进行了优化，内存占用更低，启动速度更快，适合低配置设备或嵌入式环境。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Mellow 使用透明代理时如何避免 DNS 泄露？</h5></div>
@@ -300,7 +275,32 @@ shadowrocket允许用户自定义DNS服务器，如使用Google DNS、Cloudflare
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VLESS + XTLS 如何降低移动网络延迟？</h5></div>
     <div class="panel-body">
-        XTLS 通过减少握手次数和加密开销降低延迟。结合策略组和多节点切换，可在高延迟或不稳定的移动网络环境中保持连接稳定，提升网页浏览、视频和游戏体验流畅度。    </div>
+        XTLS 通过减少握手次数和加密开销降低延迟。结合策略组和多节点切换，可在高延迟或不稳定的移动网络环境中保持连接稳定，提升网页浏览、视频和游戏体验流畅度。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何使用 Clash 配置订阅链接？</h5></div>
+    <div class="panel-body">
+        在 Clash 中添加订阅链接时，用户需复制提供的 URL 并在客户端的配置界面中粘贴。Clash 会自动下载并更新配置文件。通过订阅，用户可以一键更新节点信息，无需手动导入，适合长期维护多个节点来源的用户。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hysteria2 的多路复用如何提高传输效率？</h5></div>
+    <div class="panel-body">
+        Hysteria2 利用 QUIC 的多路复用功能，将多个请求共享单个 UDP 连接，减少握手次数和延迟，提升整体吞吐量。尤其在高并发场景中效果显著。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 是什么？它与 Shadowsocks 有何不同？</h5></div>
+    <div class="panel-body">
+        SSR（ShadowsocksR）是 Shadowsocks 的增强版本，增加了多种混淆与加密方式，提高了抗封锁能力。与原版相比，SSR 的兼容性更强，但目前已停止维护，许多用户正逐渐迁移到更先进的 V2Ray 或 Trojan 协议上。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VMess 协议的核心优势是什么？</h5></div>
+    <div class="panel-body">
+        VMess 是 V2Ray 项目的核心协议，支持加密、认证和多路复用功能。它能有效防止中间人攻击和流量识别，具有较高的安全性和灵活性，是目前科学上网中最常见的加密协议之一。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 的混淆方式如何选择最合适？</h5></div>
+    <div class="panel-body">
+        根据网络环境选择适合的混淆方式，如 tls1.2_ticket_auth 模拟 HTTPS 流量，可隐藏真实特征。结合协议插件使用，可以提高抗封锁能力和节点可用性。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -348,16 +348,16 @@ shadowrocket允许用户自定义DNS服务器，如使用Google DNS、Cloudflare
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/top-vpn-2026-8-19.htm" title="8月19日免费VPN订阅 | 2025年20.8M/S|Trojan节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点免费节点链接地址">8月19日免费VPN订阅 | 2025年20.8M/S|Trojan节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点免费节点链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/share-vpn-2026-8-29.htm" title="8月29日免费VPN订阅 | 2025年22M/S|Trojan节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点免费节点链接地址">8月29日免费VPN订阅 | 2025年22M/S|Trojan节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点免费节点链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-12-free-node-subscribe.htm" title="8月12日免费VPN订阅 | 2025年18.2M/S|V2ray节点/Trojan节点/Shadowrocket节点/Clash节点/Singbox节点/SSR节点免费节点链接地址">8月12日免费VPN订阅 | 2025年18.2M/S|V2ray节点/Trojan节点/Shadowrocket节点/Clash节点/Singbox节点/SSR节点免费节点链接地址</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-25.htm" title="8月25日免费VPN订阅 | 2025年18.5M/S|SSR节点/Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/V2ray节点免费节点链接地址">8月25日免费VPN订阅 | 2025年18.5M/S|SSR节点/Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/V2ray节点免费节点链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-26-vpn-node.htm" title="8月26日免费VPN订阅 | 2025年22.4M/S|SSR节点/Shadowrocket节点/Singbox节点/Clash节点/Trojan节点/V2ray节点免费节点链接地址">8月26日免费VPN订阅 | 2025年22.4M/S|SSR节点/Shadowrocket节点/Singbox节点/Clash节点/Trojan节点/V2ray节点免费节点链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-5.htm" title="8月5日免费VPN订阅 | 2025年22.1M/S|Clash节点/SSR节点/Shadowrocket节点/Singbox节点/Trojan节点/V2ray节点免费节点链接地址">8月5日免费VPN订阅 | 2025年22.1M/S|Clash节点/SSR节点/Shadowrocket节点/Singbox节点/Trojan节点/V2ray节点免费节点链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-14-vpn-proxy.htm" title="8月14日免费VPN订阅 | 2025年19.8M/S|SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点/Clash节点免费节点链接地址">8月14日免费VPN订阅 | 2025年19.8M/S|SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点/Clash节点免费节点链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-25-vpn-github.htm" title="7月25日免费VPN订阅 | 2025年19.8M/S|Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点免费节点链接地址">7月25日免费VPN订阅 | 2025年19.8M/S|Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点免费节点链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-30-vpn-node.htm" title="7月30日免费VPN订阅 | 2025年22.8M/S|Shadowrocket节点/V2ray节点/Singbox节点/Clash节点/Trojan节点/SSR节点免费节点链接地址">7月30日免费VPN订阅 | 2025年22.8M/S|Shadowrocket节点/V2ray节点/Singbox节点/Clash节点/Trojan节点/SSR节点免费节点链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/vpn-github-2026-8-13.htm" title="8月13日免费VPN订阅 | 2025年19.3M/S|Clash节点/Trojan节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点免费节点链接地址">8月13日免费VPN订阅 | 2025年19.3M/S|Clash节点/Trojan节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点免费节点链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-vpn-2026-8-1.htm" title="8月1日免费VPN订阅 | 2025年19.5M/S|SSR节点/V2ray节点/Clash节点/Trojan节点/Singbox节点/Shadowrocket节点免费节点链接地址">8月1日免费VPN订阅 | 2025年19.5M/S|SSR节点/V2ray节点/Clash节点/Trojan节点/Singbox节点/Shadowrocket节点免费节点链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-8-7.htm" title="8月7日免费VPN订阅 | 2025年20.3M/S|Singbox节点/Clash节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点免费节点链接地址">8月7日免费VPN订阅 | 2025年20.3M/S|Singbox节点/Clash节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点免费节点链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-4-node-share.htm" title="9月4日免费VPN订阅 | 2025年21M/S|Clash节点/SSR节点/Trojan节点/Shadowrocket节点/V2ray节点/Singbox节点免费节点链接地址">9月4日免费VPN订阅 | 2025年21M/S|Clash节点/SSR节点/Trojan节点/Shadowrocket节点/V2ray节点/Singbox节点免费节点链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/top-vpn-2026-8-19.htm" title="8月19日免费VPN订阅 | 2025年20.8M/S|Trojan节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点免费节点链接地址">8月19日免费VPN订阅 | 2025年20.8M/S|Trojan节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点免费节点链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-16-vpn-free.htm" title="8月16日免费VPN订阅 | 2025年18.3M/S|V2ray节点/Shadowrocket节点/Trojan节点/Clash节点/SSR节点/Singbox节点免费节点链接地址">8月16日免费VPN订阅 | 2025年18.3M/S|V2ray节点/Shadowrocket节点/Trojan节点/Clash节点/SSR节点/Singbox节点免费节点链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-2-free-node-subscribe.htm" title="9月2日免费VPN订阅 | 2025年19.2M/S|Trojan节点/Clash节点/SSR节点/Singbox节点/Shadowrocket节点/V2ray节点免费节点链接地址">9月2日免费VPN订阅 | 2025年19.2M/S|Trojan节点/Clash节点/SSR节点/Singbox节点/Shadowrocket节点/V2ray节点免费节点链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-22-vpn-node.htm" title="8月22日免费VPN订阅 | 2025年22.8M/S|Shadowrocket节点/V2ray节点/Singbox节点/Clash节点/SSR节点/Trojan节点免费节点链接地址">8月22日免费VPN订阅 | 2025年22.8M/S|Shadowrocket节点/V2ray节点/Singbox节点/Clash节点/SSR节点/Trojan节点免费节点链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-27.htm" title="8月27日免费VPN订阅 | 2025年21.4M/S|Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/V2ray节点/SSR节点免费节点链接地址">8月27日免费VPN订阅 | 2025年21.4M/S|Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/V2ray节点/SSR节点免费节点链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-15.htm" title="8月15日免费VPN订阅 | 2025年18.7M/S|Trojan节点/Shadowrocket节点/Clash节点/V2ray节点/SSR节点/Singbox节点免费节点链接地址">8月15日免费VPN订阅 | 2025年18.7M/S|Trojan节点/Shadowrocket节点/Clash节点/V2ray节点/SSR节点/Singbox节点免费节点链接地址</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -369,10 +369,10 @@ shadowrocket允许用户自定义DNS服务器，如使用Google DNS、Cloudflare
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">5</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
             </li>
                     </ul>
     </div>
